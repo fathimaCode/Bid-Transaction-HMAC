@@ -14,3 +14,46 @@ Traceback (most recent call last):
     email = form.cleaned_data['email']
             ^^^^^^^^^^^^^^^^^
 AttributeError: 'LoginParticpantForm' object has no attribute 'cleaned_data'
+Not Found: /favicon.ico
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Binu\Django Project\blockchain\eadmin\views.py", line 15, in login
+    email = form.cleaned_data['email']
+            ^^^^^^^^^^^^^^^^^
+AttributeError: 'LoginParticpantForm' object has no attribute 'cleaned_data'
+login page was accessed at 2024-02-01 11:01:27.916718 hours!kavitha@gmail.com,kavitha
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Binu\Django Project\blockchain\eadmin\views.py", line 21, in login
+    logger.warning('login page was accessed at '+str(datetime.datetime.now())+' hours!'+email+','+userid)
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+TypeError: can only concatenate str (not "int") to str
+login page was accessed at 2024-02-01 11:08:06.758130 hours!kavitha@gmail.com,5
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Binu\Django Project\blockchain\eadmin\views.py", line 22, in login
+    logger.warning('login page was accessed at '+str(datetime.datetime.now())+' hours!'+email+','+str(userid))
+                                                                                                      ^^^^^^
+NameError: name 'unedserid' is not defi
+5
+5
+5
+5

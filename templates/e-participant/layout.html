@@ -1,0 +1,19 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain-Participant</title>
+</head>
+<body>
+    <p>I am Dashboard</p>
+    {% if participant_info %}
+    <p>{{participant_info.username}}</p>
+    {% endif%}
+    <a href="{% url 'dashboard' %}">Home</a>
+    <a href="{% url 'bid_details' %}">Bid Details</a>
+    <a href="{% url 'index' %}">Logout</a>
+
+    {% block content %}
+    {% endblock  %}
+</body>
+</html>
