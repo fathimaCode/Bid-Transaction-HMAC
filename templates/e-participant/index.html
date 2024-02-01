@@ -1,6 +1,9 @@
 {% extends 'e-participant/layout.html' %}
 
 {% block content %}
-    <p></p>
+<p>This is index file in particpant dashboard</p>
+{% if tenderList %}
+<p>{{tenderList.title}}</p>
+{% endif%}
   
 {% endblock %}

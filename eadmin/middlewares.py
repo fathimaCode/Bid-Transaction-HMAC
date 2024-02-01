@@ -18,3 +18,4 @@ class ParticipantInfoMiddleware:
         request.participant_info = participant_info
         response = self.get_response(request)
         return response
+

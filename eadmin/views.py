@@ -40,6 +40,10 @@ def dashboard(request):
     if not participant_info:
         return redirect('login')  # Redirect to login if participant_info is not available
     logger.warning(str(participant_info.id))  # Log participant ID
+    tenders = getattr(request,'tenderList',None)
+    tender_titles = [tender.title for tender in tenders] if tenders else []
+    logger.warning(tender_titles)  # Log tender titles
+    logger.warning(tenders.title)   
     return render(request, "e-participant/index.html", {'participant_info': participant_info})
 
     

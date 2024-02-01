@@ -50,6 +50,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'eadmin.middlewares.ParticipantInfoMiddleware',
+    'eadmin.tenderMiddleware.TenderListMiddleWare'
 ]
 
 ROOT_URLCONF = "blockchain.urls"
