@@ -101,3 +101,8 @@ Traceback (most recent call last):
   File "E:\python_anaconda\Lib\site-packages\django\template\loader.py", line 19, in get_template
     raise TemplateDoesNotExist(template_name, chain=chain)
 django.template.exceptions.TemplateDoesNotExist: bid_details.html
+4
+5
+5
+Not Found: /favicon.ico
+5

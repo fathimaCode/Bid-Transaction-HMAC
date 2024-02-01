@@ -36,10 +36,16 @@ def register(request):
     return render(request,"common/registerPage.html",{'form':form})
 
 def dashboard(request):
-    user_id = request.session.get('user_id')
-    participant_info = particpants.objects.get(pk=user_id)
-    logger.warning(str(user_id))
-    return render(request,"e-participant/index.html",{'participant_info': participant_info})
+    participant_info = getattr(request, 'participant_info', None)
+    if not participant_info:
+        return redirect('login')  # Redirect to login if participant_info is not available
+    logger.warning(str(participant_info.id))  # Log participant ID
+    return render(request, "e-participant/index.html", {'participant_info': participant_info})
+
     
 def bid_details(request):
-    return render(request,"bid_details.html")
+    participant_info = getattr(request, 'participant_info', None)
+    if not participant_info:
+        return redirect('login')  # Redirect to login if participant_info is not available
+    return render(request, "e-participant/bid_details.html", {'participant_info': participant_info})
+

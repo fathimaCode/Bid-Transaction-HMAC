@@ -29,7 +29,7 @@ class tender(models.Model):
     img = models.ImageField(upload_to=getFile,null=True,blank=True)
     created_at=models.DateTimeField(auto_now_add=True)
     tenderNo = models.CharField(max_length=100,null=False,blank=False)
-    status=  forms.BooleanField(initial=True)
+    status=  forms.BooleanField()
 
 class particpantForm(forms.ModelForm):
     class Meta:
@@ -49,6 +49,7 @@ class TenderForm(forms.ModelForm):
         widgets = {
            'started_at': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
            'ended_at': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
+
         }
 
 
