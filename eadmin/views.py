@@ -11,7 +11,7 @@ def index(request):
 def login(request):
     if request.method == 'POST':
         
-        form = LoginParticpantForm()
+        form = LoginParticpantForm(data= request.POST)
         email = form.cleaned_data['email']
         password = form.cleaned_data['password']
         logger.warning('login page was accessed at '+str(datetime.datetime.now())+' hours!'+email+','+password)
