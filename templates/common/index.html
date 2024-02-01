@@ -1,0 +1,7 @@
+{% extends 'common/layout.html' %}
+
+{% block main %}
+    <p>I am from the index page.</p>
+    <a href="{% url 'login' %}">login</a>
+    <a href="{% url 'register' %}">register</a>
+{% endblock %}

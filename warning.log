@@ -1,0 +1,16 @@
+Homepage was accessed at 2024-02-01 12:45:03.768207 hours!
+Homepage was accessed at 2024-02-01 12:45:13.229653 hours!
+Homepage was accessed at 2024-02-01 12:56:30.535802 hours!
+Homepage was accessed at 2024-02-01 12:56:38.487533 hours!
+Internal Server Error: /login/
+Traceback (most recent call last):
+  File "C:\Users\Alice\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alice\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\pythonWork\blockchain\eadmin\views.py", line 15, in login
+    email = form.cleaned_data['email']
+            ^^^^^^^^^^^^^^^^^
+AttributeError: 'LoginParticpantForm' object has no attribute 'cleaned_data'
