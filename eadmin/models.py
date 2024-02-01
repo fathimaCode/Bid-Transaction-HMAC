@@ -29,7 +29,7 @@ class tender(models.Model):
     img = models.ImageField(upload_to=getFile,null=True,blank=True)
     created_at=models.DateTimeField(auto_now_add=True)
     tenderNo = models.CharField(max_length=100,null=False,blank=False)
-    status=  forms.BooleanField()
+    status=  models.BooleanField(default=True)
 
 class particpantForm(forms.ModelForm):
     class Meta:

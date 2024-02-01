@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import particpantForm,LoginParticpantForm,particpants
+from .models import particpantForm,LoginParticpantForm,particpants,tender
 import datetime
 from django.contrib import messages
 # import the logging library
@@ -40,11 +40,10 @@ def dashboard(request):
     if not participant_info:
         return redirect('login')  # Redirect to login if participant_info is not available
     logger.warning(str(participant_info.id))  # Log participant ID
-    tenders = getattr(request,'tenderList',None)
-    tender_titles = [tender.title for tender in tenders] if tenders else []
-    logger.warning(tender_titles)  # Log tender titles
-    logger.warning(tenders.title)   
-    return render(request, "e-participant/index.html", {'participant_info': participant_info})
+    tenders = getattr(request, 'tenderList', None)
+    logger.warning(f"Tenders: {tenders}") 
+    
+    return render(request, "e-participant/index.html", {'participant_info': participant_info,'tenders':tenders},)
 
     
 def bid_details(request):
@@ -53,3 +52,6 @@ def bid_details(request):
         return redirect('login')  # Redirect to login if participant_info is not available
     return render(request, "e-participant/bid_details.html", {'participant_info': participant_info})
 
+def getBidDetails(request,bid_id):
+    tender=tender.objects.get(pk=bid_id)
+    return render(request,'e-participant/tenderDetails.html',{'tenderDetails':tender})

@@ -139,3 +139,48 @@ Traceback (most recent call last):
     logger.warning(tenders.title)
                 ^^^^^^^^^^^^^
 AttributeError: 'QuerySet' object has no attribute 'title'
+5
+Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Binu\Django Project\blockchain\eadmin\views.py", line 44, in dashboard
+    if tender_list:
+       ^^^^^^^^^^^
+NameError: name 'tender_list' is not defined
+5
+Internal Server Error: /dashboard/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Binu\Django Project\blockchain\eadmin\views.py", line 44, in dashboard
+    if tender_list:
+       ^^^^^^^^^^^
+NameError: name 'tender_list' is not defined
+5
+Tenders: <QuerySet [<tender: tender object (1)>, <tender: tender object (2)>, <tender: tender object (3)>]>
+5
+Tenders: <QuerySet [<tender: tender object (1)>, <tender: tender object (2)>, <tender: tender object (3)>]>
+5
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>]>
+5
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>]>
+5
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>]>
+Internal Server Error: /viewBidDetails/4/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: getBidDetails() got an unexpected keyword argument 'tender_id'

@@ -1,9 +1,11 @@
 {% extends 'e-participant/layout.html' %}
 
 {% block content %}
-<p>This is index file in particpant dashboard</p>
-{% if tenderList %}
-<p>{{tenderList.title}}</p>
-{% endif%}
+<ul>
+    {% for tender in tenders %}
+        <li>Tender ID: {{ tender.id }}, Title: {{ tender.title }}: {{ tender.status }} <a href="{% url 'viewBidDetails' tender_id=tender.id %}" >Bid</a></li>
+    
+    {% endfor %}
+</ul>
   
 {% endblock %}
