@@ -52,6 +52,7 @@ def bid_details(request):
         return redirect('login')  # Redirect to login if participant_info is not available
     return render(request, "e-participant/bid_details.html", {'participant_info': participant_info})
 
-def getBidDetails(request,bid_id):
-    tender=tender.objects.get(pk=bid_id)
+def getBidDetails(request,tender_id):
+    tender=tender.objects.get(pk=tender_id)
+    logger.warning(f"tender:{tender}")
     return render(request,'e-participant/tenderDetails.html',{'tenderDetails':tender})

@@ -184,3 +184,15 @@ Traceback (most recent call last):
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 TypeError: getBidDetails() got an unexpected keyword argument 'tender_id'
+Internal Server Error: /viewBidDetails/4/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Binu\Django Project\blockchain\eadmin\views.py", line 56, in getBidDetails
+    tender=tender.objects.get(pk=tender_id)
+           ^^^^^^
+UnboundLocalError: cannot access local variable 'tender' where it is not associated with a value
