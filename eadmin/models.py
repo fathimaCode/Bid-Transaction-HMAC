@@ -30,6 +30,8 @@ class tender(models.Model):
     created_at=models.DateTimeField(auto_now_add=True)
     tenderNo = models.CharField(max_length=100,null=False,blank=False)
     status=  models.BooleanField(default=True)
+    initalCotation = models.CharField(max_length=100,null=False,blank=False,default=0)
+    
 
 class particpantForm(forms.ModelForm):
     class Meta:
@@ -45,7 +47,7 @@ class particpantForm(forms.ModelForm):
 class TenderForm(forms.ModelForm):
     class Meta:
         model=tender
-        fields=['title','started_at','ended_at','img']
+        fields=['title','started_at','ended_at','img','initalCotation' ]
         widgets = {
            'started_at': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
            'ended_at': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
@@ -54,6 +56,23 @@ class TenderForm(forms.ModelForm):
 
 
 class LoginParticpantForm(forms.ModelForm):
+    class Meta:
+        model = particpants
+        fields = ['email','password']
+        widgets ={
+           'email': forms.EmailInput(attrs={'type': 'email', 'placeholder':'Enter Email Address'}),
+           'password': forms.TextInput(attrs={'type': 'password' , 'placeholder':'Enter password'}),
+        }
+
+class Bidder(models.Model):
+    userid = models.CharField(max_length=100,null=False, blank=False)
+    tenderNo = models.CharField(max_length=100)
+    amount = models.CharField(max_length=100)
+    bided_at = models.DateTimeField(auto_now_add=True)
+
+
+
+class BidAmoutByUser(forms.ModelForm):
     class Meta:
         model = particpants
         fields = ['email','password']

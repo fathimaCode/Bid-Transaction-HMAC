@@ -53,6 +53,6 @@ def bid_details(request):
     return render(request, "e-participant/bid_details.html", {'participant_info': participant_info})
 
 def getBidDetails(request,tender_id):
-    tender=tender.objects.get(pk=tender_id)
-    logger.warning(f"tender:{tender}")
-    return render(request,'e-participant/tenderDetails.html',{'tenderDetails':tender})
+    tenders=tender.objects.get(pk=tender_id)
+    logger.warning(f"tender:{tenders}")
+    return render(request,'e-participant/tenderDetails.html',{'tenderDetails':tenders})
