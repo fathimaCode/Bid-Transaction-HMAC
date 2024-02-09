@@ -9,7 +9,7 @@
         {% csrf_token %}
         <input type="text" name="amount">
         <input type="text" name="userid" value={{participant_info.id}}>
-        <input type="text" name="tenderNo" value={{tenderDetails.tenderNo}}>
+        <input type="text" name="tenderNo" value={{tenderDetails.id}}>
         <button type="submit">Cotation</button>
     </form>
 {% endblock %}

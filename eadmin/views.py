@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import particpantForm,LoginParticpantForm,particpants,tender
+from .models import particpantForm,LoginParticpantForm,particpants,tender,Blockchain,tenderCotated
 import datetime
 from django.contrib import messages
 from .HmacEncoderDecoder import HmacEncoderDecoder
@@ -78,4 +78,39 @@ def newCotation(request):
         print("Decoded data:", decoded_data)
         participant_info = getattr(request, 'participant_info', None)
         tenders = getattr(request, 'tenderList', None)
-        return render(request, "e-participant/index.html", {'participant_info': participant_info,'tenders':tenders},)
+        previousHash = blockchain_count()
+        out = tenderCotated.objects.filter(tenderid=tenderNo,userid=userId).exists()
+        print(previousHash)
+        print(out)
+        cc = createBlockchain(tenderNo,previousHash,encoded_data['digest'],encoded_data)
+        print(cc)
+        tenderCote_create(tenderNo,userId)
+    return render(request, "e-participant/index.html", {'participant_info': participant_info,'tenders':tenders},)
+
+def createBlockchain(tenderNo,previousHash,encoded,data ):
+    blockchain_data = Blockchain.objects.create(
+                tenderid=tenderNo,  
+                previousHash=previousHash,
+                currentHash= encoded,
+                data = data
+            )
+    tt = blockchain_data.save()
+    print("Blockchain data saved successfully!")
+    return blockchain_data
+
+def tenderCote_create(tenderNo,userId):
+    tender_cotated = tenderCotated.objects.create(
+                tenderid=tenderNo,  
+                userid=userId,
+            ) 
+    tender_cotated.save()
+    print("tender cotated data saved successfully!")
+    return tender_cotated
+
+def blockchain_count():
+    previousHash = 0
+    totalCount = Blockchain.objects.count()
+    if(totalCount>0):
+        last_row_data = Blockchain.objects.last()
+        previousHash = last_row_data.currentHash
+    return previousHash

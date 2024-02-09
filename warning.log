@@ -388,3 +388,302 @@ Traceback (most recent call last):
                    ^^^^^^^^^^^
 NameError: name 'decode_data' is not defined
 tender:tender object (7)
+5
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>, <tender: tender object (7)>]>
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 81, in newCotation
+    previousHash = blockchain_count()
+                   ^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 100, in blockchain_count
+    totalCount = Blockchain.objects.count()
+                 ^^^^^^^^^^
+NameError: name 'Blockchain' is not defined
+5
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>, <tender: tender object (7)>]>
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 81, in newCotation
+    previousHash = blockchain_count()
+                   ^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 100, in blockchain_count
+    totalCount = Blockchain.objects.count()
+                 ^^^^^^^^^^
+NameError: name 'Blockchain' is not defined
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 81, in newCotation
+    previousHash = blockchain_count()
+                   ^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 100, in blockchain_count
+    totalCount = Blockchain.objects.count()
+                 ^^^^^^^^^^
+NameError: name 'Blockchain' is not defined
+tender:tender object (7)
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\fields\__init__.py", line 2112, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: 'TE000122'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 82, in newCotation
+    if tenderCotated.objects.filter(tenderid=tenderNo,userid=userId).exist():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\sql\query.py", line 1602, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\sql\query.py", line 1634, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\sql\query.py", line 1548, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\sql\query.py", line 1378, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\fields\related_lookups.py", line 156, in get_prep_lookup
+    self.rhs = target_field.get_prep_value(self.rhs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\fields\__init__.py", line 2114, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'TE000122'.
+5
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>, <tender: tender object (7)>]>
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 82, in newCotation
+    if tenderCotated.objects.filter(tenderid=tenderNo,userid=userId).exist():
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QuerySet' object has no attribute 'exist'
+tender:tender object (7)
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 85, in newCotation
+    blockchain_data = Blockchain.objects.create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\query.py", line 675, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 283, in __set__
+    raise ValueError(
+ValueError: Cannot assign "'7'": "Blockchain.tenderid" must be a "tender" instance.
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 85, in newCotation
+    blockchain_data = Blockchain.objects.create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\query.py", line 675, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 283, in __set__
+    raise ValueError(
+ValueError: Cannot assign "7": "Blockchain.tenderid" must be a "tender" instance.
+tender:tender object (7)
+5
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>, <tender: tender object (7)>]>
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\blockchain\eadmin\views.py", line 86, in newCotation
+    tender_instance = tender.objects.get(tenderNo=tenderNo)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\query.py", line 647, in get
+    raise self.model.DoesNotExist(
+eadmin.models.tender.DoesNotExist: tender matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 88, in newCotation
+    return HttpResponse("Tender with the specified tenderNo does not exist", status=400)
+           ^^^^^^^^^^^^
+NameError: name 'HttpResponse' is not defined
+tender:tender object (7)
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 85, in newCotation
+    createBlockchain(tenderNo,previousHash,encode_data['digest'],encode_data)
+                                           ^^^^^^^^^^^
+NameError: name 'encode_data' is not defined
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 85, in newCotation
+    createBlockchain(tenderNo,previousHash,encoded_data['digest'],encoded_data)
+  File "E:\blockchain\eadmin\views.py", line 89, in createBlockchain
+    blockchain_data = Blockchain.objects.create(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\query.py", line 675, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 283, in __set__
+    raise ValueError(
+ValueError: Cannot assign "7": "Blockchain.tenderid" must be a "tender" instance.
+tender:tender object (7)
+tender:tender object (7)
+tender:tender object (7)
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 88, in newCotation
+    tenderCote_create(tender_obj,userId)
+  File "E:\blockchain\eadmin\views.py", line 103, in tenderCote_create
+    tender_cotated = tenderCotated.objects.create(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\query.py", line 675, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\base.py", line 543, in __init__
+    _setattr(self, field.name, rel_obj)
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 283, in __set__
+    raise ValueError(
+ValueError: Cannot assign "'5'": "tenderCotated.userid" must be a "particpants" instance.
+tender:tender object (7)
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 86, in newCotation
+    user_obj = tender.objects.get(pk=userId)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\query.py", line 647, in get
+    raise self.model.DoesNotExist(
+eadmin.models.tender.DoesNotExist: tender matching query does not exist.
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\blockchain\eadmin\views.py", line 86, in newCotation
+    user_obj = tender.objects.get(pk=userId)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\db\models\query.py", line 647, in get
+    raise self.model.DoesNotExist(
+eadmin.models.tender.DoesNotExist: tender matching query does not exist.
+tender:tender object (7)

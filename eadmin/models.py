@@ -1,5 +1,7 @@
 from django.db import models
 import datetime
+from django.utils import timezone
+
 # Create your models here.
 import os
 from django import forms
@@ -65,17 +67,22 @@ class LoginParticpantForm(forms.ModelForm):
         }
 
 
-
+def default_data():
+    """
+    Default value for the data field.
+    """
+    return {'updated_at': timezone.now().isoformat()} 
 
 #Blockchain table
 class Blockchain(models.Model):
-    tenderid= models.ForeignKey(tender, on_delete=models.CASCADE)
+    tenderid= models.CharField(max_length=100,null=False, blank=False)
     previousHash = models.CharField(max_length=100,null=False, blank=False)
     currentHash = models.CharField(max_length=100,null=False, blank=False)
+    data = models.JSONField(default=default_data) 
     updated_at=models.DateTimeField(auto_now_add=True)
 
 
 class tenderCotated(models.Model):
-    tenderid= models.ForeignKey(tender, on_delete=models.CASCADE)
-    userid = models.ForeignKey(particpants, on_delete=models.CASCADE)
+    tenderid= models.CharField(max_length=100,null=False, blank=False)
+    userid = models.CharField(max_length=100,null=False, blank=False)
     updated_at=models.DateTimeField(auto_now_add=True)
