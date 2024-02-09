@@ -687,3 +687,4 @@ Traceback (most recent call last):
     raise self.model.DoesNotExist(
 eadmin.models.tender.DoesNotExist: tender matching query does not exist.
 tender:tender object (7)
+tender:tender object (7)
