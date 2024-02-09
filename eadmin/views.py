@@ -2,7 +2,8 @@ from django.shortcuts import render,redirect
 from .models import particpantForm,LoginParticpantForm,particpants,tender
 import datetime
 from django.contrib import messages
-from HmacEncoderDecoder import HmacEncoderDecoder
+from .HmacEncoderDecoder import HmacEncoderDecoder
+
 
 # import the logging library
 import logging
@@ -70,9 +71,11 @@ def newCotation(request):
         tenderNo = request.POST.get('tenderNo')
         secret_key = "admin"
         encoder_decoder = HmacEncoderDecoder(secret_key)
-        encoded_data = encoder_decoder.encode_data({'userid': userId, 'transaction': cotedAmount}, secret_key)
+        encoded_data = encoder_decoder.encode_data({'userid': userId, 'transaction': cotedAmount})
         print("Encoded data:", encoded_data)
         print(tenderNo)
+        decoded_data = encoder_decoder.decode_data(encoded_data)
+        print("Decoded data:", decoded_data)
         participant_info = getattr(request, 'participant_info', None)
         tenders = getattr(request, 'tenderList', None)
         return render(request, "e-participant/index.html", {'participant_info': participant_info,'tenders':tenders},)

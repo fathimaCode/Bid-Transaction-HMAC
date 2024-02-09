@@ -358,3 +358,33 @@ ValueError: The view eadmin.views.newCotation didn't return an HttpResponse obje
 5
 Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>, <tender: tender object (7)>]>
 tender:tender object (7)
+5
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>, <tender: tender object (7)>]>
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Binu\Django Project\blockchain\eadmin\views.py", line 74, in newCotation
+    encoded_data = encoder_decoder.encode_data({'userid': userId, 'transaction': cotedAmount}, secret_key)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: HmacEncoderDecoder.encode_data() takes 2 positional arguments but 3 were given
+tender:tender object (7)
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Binu\Django Project\blockchain\eadmin\views.py", line 79, in newCotation
+    decoded_data = decode_data(encoded_data, secret_key)
+                   ^^^^^^^^^^^
+NameError: name 'decode_data' is not defined
+tender:tender object (7)

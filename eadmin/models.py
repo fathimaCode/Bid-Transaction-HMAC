@@ -75,4 +75,7 @@ class Blockchain(models.Model):
     updated_at=models.DateTimeField(auto_now_add=True)
 
 
-
+class tenderCotated(models.Model):
+    tenderid= models.ForeignKey(tender, on_delete=models.CASCADE)
+    userid = models.ForeignKey(particpants, on_delete=models.CASCADE)
+    updated_at=models.DateTimeField(auto_now_add=True)
