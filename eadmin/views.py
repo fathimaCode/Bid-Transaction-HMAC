@@ -2,10 +2,14 @@ from django.shortcuts import render,redirect
 from .models import particpantForm,LoginParticpantForm,particpants,tender
 import datetime
 from django.contrib import messages
+from HmacEncoderDecoder import HmacEncoderDecoder
+
 # import the logging library
 import logging
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
+
+
 def index(request):
     return render(request,"common/index.html")
 
@@ -55,4 +59,20 @@ def bid_details(request):
 def getBidDetails(request,tender_id):
     tenders=tender.objects.get(pk=tender_id)
     logger.warning(f"tender:{tenders}")
-    return render(request,'e-participant/tenderDetails.html',{'tenderDetails':tenders})
+    participant_info = getattr(request, 'participant_info', None)
+    return render(request,'e-participant/tenderDetails.html',{'tenderDetails':tenders,'participant_info': participant_info})
+
+
+def newCotation(request):
+    if request.method=='POST':
+        cotedAmount = request.POST.get('amount')
+        userId = request.POST.get('userid')
+        tenderNo = request.POST.get('tenderNo')
+        secret_key = "admin"
+        encoder_decoder = HmacEncoderDecoder(secret_key)
+        encoded_data = encoder_decoder.encode_data({'userid': userId, 'transaction': cotedAmount}, secret_key)
+        print("Encoded data:", encoded_data)
+        print(tenderNo)
+        participant_info = getattr(request, 'participant_info', None)
+        tenders = getattr(request, 'tenderList', None)
+        return render(request, "e-participant/index.html", {'participant_info': participant_info,'tenders':tenders},)

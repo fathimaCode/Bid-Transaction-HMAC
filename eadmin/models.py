@@ -64,19 +64,15 @@ class LoginParticpantForm(forms.ModelForm):
            'password': forms.TextInput(attrs={'type': 'password' , 'placeholder':'Enter password'}),
         }
 
-class Bidder(models.Model):
-    userid = models.CharField(max_length=100,null=False, blank=False)
-    tenderNo = models.CharField(max_length=100)
-    amount = models.CharField(max_length=100)
-    bided_at = models.DateTimeField(auto_now_add=True)
 
 
 
-class BidAmoutByUser(forms.ModelForm):
-    class Meta:
-        model = particpants
-        fields = ['email','password']
-        widgets ={
-           'email': forms.EmailInput(attrs={'type': 'email', 'placeholder':'Enter Email Address'}),
-           'password': forms.TextInput(attrs={'type': 'password' , 'placeholder':'Enter password'}),
-        }
+#Blockchain table
+class Blockchain(models.Model):
+    tenderid= models.ForeignKey(tender, on_delete=models.CASCADE)
+    previousHash = models.CharField(max_length=100,null=False, blank=False)
+    currentHash = models.CharField(max_length=100,null=False, blank=False)
+    updated_at=models.DateTimeField(auto_now_add=True)
+
+
+
