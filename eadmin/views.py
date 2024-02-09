@@ -80,11 +80,11 @@ def newCotation(request):
         tenders = getattr(request, 'tenderList', None)
         previousHash = blockchain_count()
         out = tenderCotated.objects.filter(tenderid=tenderNo,userid=userId).exists()
-        print(previousHash)
-        print(out)
-        cc = createBlockchain(tenderNo,previousHash,encoded_data['digest'],encoded_data)
-        print(cc)
-        tenderCote_create(tenderNo,userId)
+        if out:
+            return redirect('/dashboard')
+        else:
+            createBlockchain(tenderNo,previousHash,encoded_data['digest'],encoded_data)
+            tenderCote_create(tenderNo,userId)
     return render(request, "e-participant/index.html", {'participant_info': participant_info,'tenders':tenders},)
 
 def createBlockchain(tenderNo,previousHash,encoded,data ):

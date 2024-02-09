@@ -688,3 +688,27 @@ Traceback (most recent call last):
 eadmin.models.tender.DoesNotExist: tender matching query does not exist.
 tender:tender object (7)
 tender:tender object (7)
+6
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>, <tender: tender object (7)>]>
+tender:tender object (7)
+tender:tender object (7)
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view eadmin.views.newCotation didn't return an HttpResponse object. It returned None instead.
+Internal Server Error: /newCotation/
+Traceback (most recent call last):
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view eadmin.views.newCotation didn't return an HttpResponse object. It returned None instead.
