@@ -712,3 +712,16 @@ Traceback (most recent call last):
   File "E:\python_anaconda\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
     raise ValueError(
 ValueError: The view eadmin.views.newCotation didn't return an HttpResponse object. It returned None instead.
+tender:tender object (7)
+6
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>, <tender: tender object (7)>]>
+tender:tender object (7)
+6
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>, <tender: tender object (7)>]>
+5
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>, <tender: tender object (7)>]>
+tender:tender object (7)
+5
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>, <tender: tender object (7)>]>
+5
+Tenders: <QuerySet [<tender: tender object (4)>, <tender: tender object (6)>, <tender: tender object (7)>]>
