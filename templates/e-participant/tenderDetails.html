@@ -2,16 +2,26 @@
 
 {% block content %}
     <p>Tender Detail Page</p>
-    {{ tenderDetails.tenderNo }} {{ tenderDetails.initalCotation }}
-    <p>user id: {{participant_info.id}}</p>
-    
-    <form method="post" action="{% url 'newCotation' %}">
-        {% csrf_token %}
-        <input type="text" name="amount">
-        <input type="text" name="userid" value={{participant_info.id}}>
-        <input type="text" name="tenderNo" value={{tenderDetails.id}}>
-        <button type="submit">Cotation</button>
-    </form>
+
+    <div class="bl-container">
+         <div class="card bl-cotation">
+            <p>Tender No: {{ tenderDetails.tenderNo }}</p>
+            <p>Initial Cotation: Rs. {{ tenderDetails.initalCotation }}</p>
+          
+            <form class="bl-cotation" method="post" action="{% url 'newCotation' %}">
+                {% csrf_token %}
+                <input type="text" name="amount" class="form-control">
+                <input type="hidden" name="userid" value={{participant_info.id}}>
+                <input type="hidden" name="tenderNo" value={{tenderDetails.id}}>
+                <button type="submit" class="bl-btn wd-1">Cotation</button>
+            </form>
+        
+        </div>
+        <div class="card bl-cotation hw-1">
+            <h2>Recent Participant Cotation </h2>
+        
+        </div>
+    </div>
 
 
 

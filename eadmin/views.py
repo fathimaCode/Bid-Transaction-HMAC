@@ -60,8 +60,10 @@ def bid_details(request):
 def getBidDetails(request,tender_id):
     tenders=tender.objects.get(pk=tender_id)
     logger.warning(f"tender:{tenders}")
+    request.tender_id = tender_id
+    block_list = getattr(request, 'block_list', None)
     participant_info = getattr(request, 'participant_info', None)
-    return render(request,'e-participant/tenderDetails.html',{'tenderDetails':tenders,'participant_info': participant_info})
+    return render(request,'e-participant/tenderDetails.html',{'tenderDetails':tenders,'block_list': block_list, 'participant_info': participant_info})
 
 
 def newCotation(request):
