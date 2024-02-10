@@ -1,7 +1,25 @@
 {% extends 'common/layout.html' %}
-
+{% load static %}
 {% block main %}
-    <p>I am from the index page.</p>
-    <a href="{% url 'login' %}">login</a>
-    <a href="{% url 'register' %}">register</a>
+
+
+<div class="container">
+    <div class="carousel">
+        <img src="{% static 'profile/bg3.jpg' %}" alt="" class="bg-image">
+    </div>
+</div>
+<div class="winner_container">
+    <h3>View Winner</h3>
+    <div class="BContainer">
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+        <div class="card"></div>
+    </div>
+</div>
+
 {% endblock %}

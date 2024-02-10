@@ -40,10 +40,10 @@ class particpantForm(forms.ModelForm):
         model = particpants
         fields = ['username','password','contact','email']
         widgets ={
-           'username': forms.TextInput(attrs={'type': 'text', 'placeholder':'Enter Username'}),
-           'password': forms.TextInput(attrs={'type': 'password' , 'placeholder':'Enter password'}),
-           'contact': forms.TextInput(attrs={'type': 'number', 'placeholder':'Enter Contact Number'}),
-           'email': forms.EmailInput(attrs={'type': 'email', 'placeholder':'Enter Email Address'}),
+           'username': forms.TextInput(attrs={'type': 'text', 'placeholder':'Enter Username', 'class': 'form-control'}),
+           'password': forms.TextInput(attrs={'type': 'password' , 'placeholder':'Enter password', 'class': 'form-control'}),
+           'contact': forms.TextInput(attrs={'type': 'number', 'placeholder':'Enter Contact Number', 'class': 'form-control'}),
+           'email': forms.EmailInput(attrs={'type': 'email', 'placeholder':'Enter Email Address', 'class': 'form-control'}),
         }
 
 class TenderForm(forms.ModelForm):
@@ -62,8 +62,8 @@ class LoginParticpantForm(forms.ModelForm):
         model = particpants
         fields = ['email','password']
         widgets ={
-           'email': forms.EmailInput(attrs={'type': 'email', 'placeholder':'Enter Email Address'}),
-           'password': forms.TextInput(attrs={'type': 'password' , 'placeholder':'Enter password'}),
+           'email': forms.EmailInput(attrs={'type': 'email', 'placeholder':'Enter Email Address', 'class': 'form-control'}),
+           'password': forms.TextInput(attrs={'type': 'password' , 'placeholder':'Enter password', 'class': 'form-control'}),
         }
 
 

@@ -6,10 +6,28 @@
     <title>Blockchain</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="icon" href="{% static 'profile/logo.jpg' %}" type="image/png">
+    {% block style %}
+    
+    {% endblock %}
 </head>
 <body>
-    <p>Hello i am common page</p>
+    <header>
+        <nav>
+            <!-- <img src="{% static 'profile/logo.jpg' %}" alt="" class="logo-image">
+             -->
+             <h1>Blockchain</h1>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li> <span><a href="{% url 'login' %}">Login</a></span></li>
+            </ul>
+        </nav>
+    </header>
+    
+  
     {% block main %}
     {% endblock %}
+    <footer>
+        <p>Designed by Blockchain @2024</p>
+    </footer>
 </body>
 </html>

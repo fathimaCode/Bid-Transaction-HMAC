@@ -1,8 +1,24 @@
 {% extends 'common/layout.html' %}
+{% load static %}
 {% block main %}
-<form method="post">
-{% csrf_token %}
-{{ form.as_p }}
-<button type="submit">Submit</button>
-</form>
+
+
+<section>
+    <div class="card form bl-h">
+        <div class="logo-info">
+            <img src="{% static 'profile/logo.jpg'%}" alt="" height="50px" width="50px">
+            <h2>Hello! Sign In</h2>
+        </div>
+        
+        <form method="post" class="bl-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="bl-button">Sign Up</button>
+            <p>Already have an account? <a href="{% url 'login' %}">Click here</a></p>
+            </form>
+            
+    </div>
+</section>
+
+  
 {% endblock %}
