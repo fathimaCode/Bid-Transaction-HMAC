@@ -11,6 +11,8 @@
 
 :root {
     --primary-color: #9766be;
+    --light-primary-color: #be9fd8;
+    --green-color:#0c8835;
     --white-color: #ffff;
     --black-color: #0a0a0aee;
 }
@@ -245,4 +247,98 @@ a {
 }
 .bl-fnt{
     font-weight: 200;
+}
+.bl-container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    margin: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.bl-container .bl-card{
+    height: 200px;
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    position: relative;
+    margin: 5px;
+    border-radius: 5px;
+}
+.bl-img{
+    height: 100px;
+    width: 150;
+    position: absolute;
+    margin-left: 50px;
+    border-radius: 5px;
+    z-index: 1;
+    
+}
+.bl-content{
+    position: absolute;
+    width: 100%;
+    height:100%;
+}
+.bl-content .bl-title{
+    position: absolute;
+    left: 0;
+    top: 25px;
+    background-color: var(--light-primary-color);
+    font-weight: 100;
+    color: var(--white-color);
+    width: 100px;
+    height: 30px;
+}
+.bl-content h6{
+    text-align: center;
+}
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.bl-info{
+    position: absolute;
+    display: flex;
+    margin-top: 35%;
+    min-height: 48%;
+    width: 100%;
+    
+}
+.bl-calender{
+    border-radius: 0 10px 0px 10px;
+    
+background-color: var(--primary-color);
+color: var(--white-color);
+    width: 65%;
+}
+.bl-calender i{
+    padding: 2px;
+}
+.bl-calender span{
+    font-weight: 100;
+    margin: 2px;
+    padding: 5px;
+}
+.bl-cotation{
+    width: 30%;
+    padding: 2px;
+    font-weight: 100;
+    
+}
+.bl-cotation .header{
+    font-size: 14px;
+}
+.bl-btn{
+    display: absolute;
+    border: 1px solid var(--white-color);
+    color: var(--black-color);
+    cursor: pointer;
+    background-color: var(--primary-color);
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 0px 10px 0px 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.bl-btn:hover{
+    background-color: var(--green-color);
 }

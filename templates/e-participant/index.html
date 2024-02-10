@@ -1,11 +1,38 @@
 {% extends 'e-participant/layout.html' %}
-
+{% load static %}
 {% block content %}
-<ul>
+<div class="header-container">
+    <h1>View Recent Tenders</h1>
+</div>
+<div class="bl-container">
     {% for tender in tenders %}
-        <li>Tender ID: {{ tender.id }}, Title: {{ tender.title }}: {{ tender.status }} <a href="{% url 'viewBidDetails' tender_id=tender.id %}" >Bid</a></li>
-    
+
+    <div class="bl-card">
+        <div class="bl-img">
+            <img src="{% static  tender.img  %}" alt="" class="bl-img">
+        </div>
+        <div class="bl-content">
+            <div class="bl-title">
+                {{ tender.title }}
+            </div>
+          <div class="bl-info">
+            <div class="bl-calender">
+                <p>{{tender.tenderNo}}</p>
+                <i class="fa-regular fa-calendar-days"><span>{{tender.started_at}}</span></i>  
+                <i class="fa-regular fa-calendar-days"><span>{{tender.started_at}}</span></i>  
+            </div>
+            <div class="bl-cotation">
+                <span class="header">Inital Cotation</span>
+                <span class="header">Rs.{{tender.initalCotation}}</span>
+                <div class="bl-btn">
+                    <a href="{% url 'viewBidDetails' tender_id=tender.id %}" >Bid Now</a>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
     {% endfor %}
-</ul>
+</div>
+
   
 {% endblock %}
