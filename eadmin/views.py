@@ -3,7 +3,7 @@ from .models import particpantForm,LoginParticpantForm,particpants,tender,Blockc
 import datetime
 from django.contrib import messages
 from .HmacEncoderDecoder import HmacEncoderDecoder
-
+import json
 
 # import the logging library
 import logging
@@ -61,9 +61,10 @@ def getBidDetails(request,tender_id):
     tenders=tender.objects.get(pk=tender_id)
     logger.warning(f"tender:{tenders}")
     request.tender_id = tender_id
-    block_list = getattr(request, 'block_list', None)
+    bl_block = isTenderCotatedByUser(tender_id)
+   # block_list = getattr(request, 'block_list', None)
     participant_info = getattr(request, 'participant_info', None)
-    return render(request,'e-participant/tenderDetails.html',{'tenderDetails':tenders,'block_list': block_list, 'participant_info': participant_info})
+    return render(request,'e-participant/tenderDetails.html',{'tenderDetails':tenders,'block_list': bl_block, 'participant_info': participant_info})
 
 
 def newCotation(request):
@@ -82,12 +83,14 @@ def newCotation(request):
         tenders = getattr(request, 'tenderList', None)
         previousHash = blockchain_count()
         out = tenderCotated.objects.filter(tenderid=tenderNo,userid=userId).exists()
+        message = "Already Cotated"
         if out:
             return redirect('/dashboard')
         else:
             createBlockchain(tenderNo,previousHash,encoded_data['digest'],encoded_data)
             tenderCote_create(tenderNo,userId)
-    return render(request, "e-participant/index.html", {'participant_info': participant_info,'tenders':tenders},)
+            message = "created successfully"
+    return render(request, "e-participant/index.html", {'participant_info': participant_info,'tenders':tenders,'message':message})
 
 def createBlockchain(tenderNo,previousHash,encoded,data ):
     blockchain_data = Blockchain.objects.create(
@@ -116,3 +119,20 @@ def blockchain_count():
         last_row_data = Blockchain.objects.last()
         previousHash = last_row_data.currentHash
     return previousHash
+
+def displayBlockchain_blocks(tender_id):
+    blocks=Blockchain.objects.filter(tenderid=tender_id)
+    return blocks
+
+def isTenderCotatedByUser(tender_id):
+    blocks=Blockchain.objects.filter(tenderid=tender_id)
+    cotation = []
+    isactive =False
+    for bb in blocks:
+        # Assuming bb.data is a dictionary
+        obj = bb.data
+        # Access the keys and values directly
+        currentUserid = obj['data']['userid']
+        cotation.append({'userid':currentUserid,'tenderid':bb.tenderid,'transaction':obj['data']['transaction'],'previousHash':bb.previousHash,'currentHash':bb.currentHash,'updated_at':bb.updated_at})
+    print(cotation)
+    return cotation

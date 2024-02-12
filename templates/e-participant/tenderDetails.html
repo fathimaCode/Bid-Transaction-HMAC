@@ -2,13 +2,13 @@
 
 {% block content %}
     <p>Tender Detail Page</p>
-
+    {{participant_info.id}}
     <div class="bl-container">
-         <div class="card bl-cotation">
+         <div class="card cotation-card ">
             <p>Tender No: {{ tenderDetails.tenderNo }}</p>
             <p>Initial Cotation: Rs. {{ tenderDetails.initalCotation }}</p>
           
-            <form class="bl-cotation" method="post" action="{% url 'newCotation' %}">
+            <form  method="post" action="{% url 'newCotation' %}">
                 {% csrf_token %}
                 <input type="text" name="amount" class="form-control">
                 <input type="hidden" name="userid" value={{participant_info.id}}>
@@ -17,9 +17,32 @@
             </form>
         
         </div>
-        <div class="card bl-cotation hw-1">
+        <div class="card cotation-card wd ">
             <h2>Recent Participant Cotation </h2>
-        
+            <table>
+                <thead>
+                    <th>S.No</th>
+                    <th>TenderId</th>
+                    <th>UserId</th>
+                    <th>Previous Hash</th>
+                    <th>Current Hash</th>
+                    <th>Cotated At</th>
+                </thead>
+                <tbody>
+                    {% for blocks in block_list %}
+                    
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{blocks.tenderid}}</td>
+                        <td>{{blocks.userid}}</td>
+                        <td>{{blocks.previousHash}}</td>
+                        <td>{{blocks.currentHash}}</td>
+                        <td>{{blocks.updated_at}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+           
         </div>
     </div>
 
