@@ -32,6 +32,7 @@ class tender(models.Model):
     created_at=models.DateTimeField(auto_now_add=True)
     tenderNo = models.CharField(max_length=100,null=False,blank=False)
     status=  models.BooleanField(default=True)
+    winnerid=  models.IntegerField(default=0)
     initalCotation = models.CharField(max_length=100,null=False,blank=False,default=0)
     
 
@@ -49,7 +50,7 @@ class particpantForm(forms.ModelForm):
 class TenderForm(forms.ModelForm):
     class Meta:
         model=tender
-        fields=['title','started_at','ended_at','img','initalCotation' ]
+        fields=['title','started_at','ended_at','tenderNo','img','initalCotation' ]
         widgets = {
            'started_at': forms.DateTimeInput(attrs={'type': 'datetime-local'}),
            'ended_at': forms.DateTimeInput(attrs={'type': 'datetime-local'}),

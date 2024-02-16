@@ -1,10 +1,12 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>eadmin dashboard</p>
-</body>
-</html>
+{% extends 'e-admin/layout.html' %}
+
+{% block content %}
+<h1>Admin dashboard</h1>
+<p><a href="{% url 'viewTenderList' %}">View Tenders</a></p>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="bl-button">Add</button>
+   
+    </form>
+{% endblock%}

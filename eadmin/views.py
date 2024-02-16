@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import particpantForm,LoginParticpantForm,particpants,tender,Blockchain,tenderCotated
+from .models import particpantForm,LoginParticpantForm,particpants,tender,Blockchain,tenderCotated,TenderForm
 import datetime
 from django.contrib import messages
 from .HmacEncoderDecoder import HmacEncoderDecoder
@@ -20,12 +20,14 @@ def login(request):
         if form.is_valid():
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
-            
-            particpant = particpants.objects.get(email=email)
-            if particpant.password==password:
-                request.session['user_id']  = particpant.id  
-                messages.success(request, 'Login successful!')
-                return redirect('dashboard') 
+            if email=="authority@blockchain.com" and password=="authority":
+                return redirect('authority_newTender')
+            else:
+                particpant = particpants.objects.get(email=email)
+                if particpant.password==password:
+                    request.session['user_id']  = particpant.id  
+                    messages.success(request, 'Login successful!')
+                    return redirect('dashboard') 
     else:
         form = LoginParticpantForm()
     return render(request,"common/loginPage.html", {'form':form})
@@ -133,6 +135,64 @@ def isTenderCotatedByUser(tender_id):
         obj = bb.data
         # Access the keys and values directly
         currentUserid = obj['data']['userid']
-        cotation.append({'userid':currentUserid,'tenderid':bb.tenderid,'transaction':obj['data']['transaction'],'previousHash':bb.previousHash,'currentHash':bb.currentHash,'updated_at':bb.updated_at})
+        print("line 400:",bb.id)
+        cotation.append({'bbid':bb.id,'userid':currentUserid,'tenderid':bb.tenderid,'transaction':obj['data']['transaction'],'previousHash':bb.previousHash,'currentHash':bb.currentHash,'updated_at':bb.updated_at})
     print(cotation)
     return cotation
+
+
+
+#create an new tender
+def authority_newTender(request):
+    if request.method == 'POST':
+        form = TenderForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('authority_newTender')
+    else:
+        form = TenderForm()
+    return render(request,"e-admin/index.html",{'form':form})
+
+def viewTenderList(request):
+    tenders = getattr(request, 'tenderList', None)
+    return render(request,"e-admin/viewTenderList.html",{"tenderlist":tenders})
+
+def deleteTender(request,tender_id):
+    tenders=tender.objects.get(pk=tender_id)
+    logger.warning(f"tender:{tenders}")
+    tenders.delete()
+    return redirect('viewTenderList')
+
+def adminGetBidInfo(request,tender_id):
+    tenders=tender.objects.get(pk=tender_id)
+    logger.warning(f"tender:{tenders}")
+    request.tender_id = tender_id
+    bl_block = isTenderCotatedByUser(tender_id)
+   # block_list = getattr(request, 'block_list', None)
+    return render(request,'e-admin/BidInfo.html',{'tenderDetails':tenders,'block_list': bl_block})
+
+def closeTender(request,tender_id):
+    tenders=tender.objects.get(pk=tender_id)
+    logger.warning(f"tender:{tenders}")
+    tenders.status = False
+    tenders.save()
+    return redirect('viewTenderList')
+
+def getBlockId(bbid):
+    blocks=Blockchain.objects.filter(id=bbid)
+    cotation = []
+    isactive =False
+    for bb in blocks:
+        # Assuming bb.data is a dictionary
+        obj = bb.data
+        # Access the keys and values directly
+        currentUserid = obj['data']['userid']
+        print("line 400:",bb.id)
+        cotation.append({'bbid':bb.id,'userid':currentUserid})
+    print(cotation)
+    return cotation
+
+def announceWinner(request,blockid):
+    tt = getBlockId(blockid)
+    print(tt)
+    return redirect('viewTenderList')
