@@ -1,29 +1,31 @@
-from selenium import webdriver
+import requests
+import time
 
-# Launch Chrome browser
-driver = webdriver.Chrome()
+login_url = 'http://127.0.0.1:8000/login/'  # Update this with your actual login page URL
 
-# Execute JavaScript code to disable login button and trigger alert on attack
-js_code = '''
-// Listen for a message indicating a network attack
-window.addEventListener('message', function(event) {
-    if (event.data === 'network_attack_detected') {
-        console.log('Alert: Network attack detected in login page');
-        // Disable login button
-        document.querySelector('button[type="submit"]').disabled = true;
-        // Trigger alert
-        alert('Attack initiated. Please contact support.');
-        // Close the login page
-        window.close();
-    }
-});
-'''
+# Function to hit the login page
+def hit_login_page():
+    try:
+        response = requests.get(login_url)  # Send a GET request to get the CSRF token
+        csrf_token = response.cookies['csrftoken']  # Extract the CSRF token from the response cookies
 
-# Open the login page
-driver.get("http://127.0.0.1:8000/login/")  
+# Send a POST request with the CSRF token
+        response = requests.post(login_url, data={'email': 'authority@blockchain.com', 'password': 'authority'}, headers={'X-CSRFToken': csrf_token})
+        if response.status_code == 200:  # Assuming 200 is the success status code for your login page
+            return True
+    except requests.exceptions.RequestException as e:
+        print("Error:", e)
+    return False
 
-# Inject JavaScript code into the login page
-driver.execute_script(js_code)
+# Number of hits to the login page
+num_hits = 0
 
-# Close the browser
-driver.quit()
+# Number of hits before which the login is considered successful
+threshold = 10
+
+# Main loop to hit the login page
+while num_hits < threshold:
+    if hit_login_page():
+        num_hits += 1
+        print(f"Login hit {num_hits} times")
+    time.sleep(1)  # Adjust the sleep time as needed
