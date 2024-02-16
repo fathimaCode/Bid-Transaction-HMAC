@@ -4005,3 +4005,102 @@ tender:tender object (19)
 tender:tender object (19)
 tender:tender object (19)
 tender:tender object (19)
+tender:tender object (19)
+tender:tender object (19)
+tender:tender object (19)
+tender:tender object (19)
+tender:tender object (19)
+tender:tender object (19)
+tender:tender object (20)
+tender:tender object (19)
+tender:tender object (19)
+tender:tender object (19)
+tender:tender object (19)
+tender:tender object (19)
+Internal Server Error: /announceWinner/19/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 197, in announceWinner
+    print(tt[2])
+          ~~^^^
+IndexError: list index out of range
+Internal Server Error: /announceWinner/19/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 197, in announceWinner
+    print(tt['tenderid'])
+          ~~^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+Internal Server Error: /announceWinner/19/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 197, in announceWinner
+    print(tt['tenderid'])
+          ~~^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+tender:tender object (19)
+Internal Server Error: /announceWinner/19/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 197, in announceWinner
+    print(tt['tenderid'])
+          ~~^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+tender:tender object (19)
+5
+Tenders: <QuerySet [<tender: tender object (19)>, <tender: tender object (20)>]>
+tender:tender object (20)
+tender:tender object (20)
+tender:tender object (20)
+tender:tender object (20)
+5
+Tenders: <QuerySet [<tender: tender object (19)>, <tender: tender object (20)>]>
+5
+Tenders: <QuerySet [<tender: tender object (19)>, <tender: tender object (20)>]>
+Not Found: /dashboard/1
+Not Found: /favicon.ico
+Not Found: /dashboard/5
+5
+Tenders: <QuerySet [<tender: tender object (19)>, <tender: tender object (20)>]>
+5
+Tenders: <QuerySet [<tender: tender object (19)>, <tender: tender object (20)>]>
+Not Found: /attack_detected.html
+Not Found: /favicon.ico
+Not Found: /attack_detected.html
+Not Found: /favicon.ico
+Not Found: /attack_detected.html
+Not Found: /favicon.ico
+Not Found: /attack_detected.html
+Not Found: /favicon.ico
+Not Found: /attack_detected.html
+Not Found: /favicon.ico
+Not Found: /attack_detected.html
+Not Found: /favicon.ico
+Not Found: /attack_detected.html
+Not Found: /favicon.ico
+Not Found: /attack_detected.html
+Not Found: /favicon.ico
+Not Found: /attack_detected.html
+Not Found: /favicon.ico
+Not Found: /attack_detected.html
+Not Found: /favicon.ico

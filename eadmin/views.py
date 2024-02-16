@@ -30,6 +30,9 @@ def login(request):
                     return redirect('dashboard') 
     else:
         form = LoginParticpantForm()
+    if request.method == 'POST' and not form.is_valid():
+        # If the form submission took longer than the timeout, redirect to a page indicating attack
+        return render(request, "common/attack_detected.html")
     return render(request,"common/loginPage.html", {'form':form})
 
 def register(request):
@@ -188,11 +191,20 @@ def getBlockId(bbid):
         # Access the keys and values directly
         currentUserid = obj['data']['userid']
         print("line 400:",bb.id)
-        cotation.append({'bbid':bb.id,'userid':currentUserid})
+        cotation.append({'bbid':bb.id,'userid':currentUserid,'tenderid':bb.tenderid})
     print(cotation)
     return cotation
 
 def announceWinner(request,blockid):
     tt = getBlockId(blockid)
-    print(tt)
+    print(tt[0]['tenderid'])
+    tenders=tender.objects.get(pk=tt[0]['tenderid'])
+    logger.warning(f"tender:{tenders}")
+    tenders.winnerid = tt[0]['userid']
+    tenders.blockid = tt[0]['bbid']
+    tenders.status= False
+    tenders.save()
     return redirect('viewTenderList')
+
+def networkAttack(request):
+    return render(request,"common/attack_detected.html")

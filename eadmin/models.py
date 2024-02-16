@@ -33,6 +33,7 @@ class tender(models.Model):
     tenderNo = models.CharField(max_length=100,null=False,blank=False)
     status=  models.BooleanField(default=True)
     winnerid=  models.IntegerField(default=0)
+    blockid=  models.IntegerField(default=0)
     initalCotation = models.CharField(max_length=100,null=False,blank=False,default=0)
     
 
@@ -63,8 +64,8 @@ class LoginParticpantForm(forms.ModelForm):
         model = particpants
         fields = ['email','password']
         widgets ={
-           'email': forms.EmailInput(attrs={'type': 'email', 'placeholder':'Enter Email Address', 'class': 'form-control'}),
-           'password': forms.TextInput(attrs={'type': 'password' , 'placeholder':'Enter password', 'class': 'form-control'}),
+           'email': forms.EmailInput(attrs={'type': 'email','name': 'email',  'placeholder':'Enter Email Address', 'class': 'form-control'}),
+           'password': forms.TextInput(attrs={'type': 'password' ,'name': 'password' ,  'placeholder':'Enter password', 'class': 'form-control'}),
         }
 
 
