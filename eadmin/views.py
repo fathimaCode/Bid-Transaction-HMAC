@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import particpantForm,LoginParticpantForm,particpants,tender,Blockchain,tenderCotated,TenderForm
-import datetime
+from datetime import datetime
+
 from django.contrib import messages
 from .HmacEncoderDecoder import HmacEncoderDecoder
 import json
@@ -70,9 +71,17 @@ def dashboard(request):
         return redirect('login')  # Redirect to login if participant_info is not available
     logger.warning(str(participant_info.id))  # Log participant ID
     tenders = getattr(request, 'tenderList', None)
+    newtenders = []
     logger.warning(f"Tenders: {tenders}") 
-    
-    return render(request, "e-participant/index.html", {'participant_info': participant_info,'tenders':tenders},)
+    btn_status= False
+    today_date = datetime.today().date()
+    for tend in tenders:
+        print(tend.started_at.date())
+        if tend.started_at.date()==today_date or tend.started_at.date()<today_date:
+            btn_status= True
+        newtenders.append({'id':tend.id,'title':tend.title,'img':tend.img,'started_at':tend.started_at,'ended_at':tend.ended_at,'status':btn_status,"initalCotation":tend.initalCotation})
+    print("Today's date is:", today_date)
+    return render(request, "e-participant/index.html", {'participant_info': participant_info,'tenders':newtenders},)
 
     
 def bid_details(request):

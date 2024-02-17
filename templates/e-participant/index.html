@@ -19,14 +19,20 @@
             <div class="bl-calender">
                 <p>{{tender.tenderNo}}</p>
                 <i class="fa-regular fa-calendar-days"><span>{{tender.started_at}}</span></i>  
-                <i class="fa-regular fa-calendar-days"><span>{{tender.started_at}}</span></i>  
+                <i class="fa-regular fa-calendar-days"><span>{{tender.ended_at}}</span></i>  
             </div>
             <div class="bl-cotation">
                 <span class="header">Inital Cotation</span>
                 <span class="header">Rs.{{tender.initalCotation}}</span>
+                {% if tender.status%}
                 <div class="bl-btn">
-                    <a href="{% url 'viewBidDetails' tender_id=tender.id %}" >Bid Now</a>
+                    <a href="{% url 'viewBidDetails' tender_id=tender.id %}">Bid Now</a>
                 </div>
+            {% else %}
+            <b class="unavailable">Bidding Not Available</b>
+              
+            {% endif %}
+            
             </div>
           </div>
         </div>

@@ -313,6 +313,7 @@ a {
 .bl-info{
     position: absolute;
     display: flex;
+    padding: 5px;
     margin-top: 35%;
     min-height: 48%;
     width: 100%;
@@ -320,7 +321,7 @@ a {
 }
 .bl-calender{
     border-radius: 0 10px 0px 10px;
-    
+    padding: 4px;
 background-color: var(--primary-color);
 color: var(--white-color);
     width: 65%;
@@ -468,4 +469,7 @@ padding: 10px;
 width: 150px;
 margin-bottom: 5px;
 margin-left: 100px;
+  }
+  .unavailable{
+    color:var(--red-color)
   }
