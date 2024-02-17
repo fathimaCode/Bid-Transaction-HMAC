@@ -4,9 +4,11 @@ import datetime
 from django.contrib import messages
 from .HmacEncoderDecoder import HmacEncoderDecoder
 import json
-
+import pickle
+import random
 # import the logging library
 import logging
+
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
@@ -28,11 +30,11 @@ def login(request):
                     request.session['user_id']  = particpant.id  
                     messages.success(request, 'Login successful!')
                     return redirect('dashboard') 
+                else:
+                    return redirect('login') 
     else:
         form = LoginParticpantForm()
-    if request.method == 'POST' and not form.is_valid():
-        # If the form submission took longer than the timeout, redirect to a page indicating attack
-        return render(request, "common/attack_detected.html")
+
     return render(request,"common/loginPage.html", {'form':form})
 
 def register(request):
@@ -206,5 +208,73 @@ def announceWinner(request,blockid):
     tenders.save()
     return redirect('viewTenderList')
 
-def networkAttack(request):
-    return render(request,"common/attack_detected.html")
+def NetworkAttackLogin(request):
+    if request.method == 'POST':
+        form = LoginParticpantForm(data= request.POST)  
+        output = predictAttack() 
+        print("line 215:",output)  
+        if output == 0:
+            if form.is_valid():
+                email = form.cleaned_data['email']
+                password = form.cleaned_data['password']
+                
+                if email=="authority@blockchain.com" and password=="authority":
+                    return redirect('authority_newTender')
+                else:
+                    particpant = particpants.objects.get(email=email)
+                    if particpant.password==password:
+                        request.session['user_id']  = particpant.id  
+                        messages.success(request, 'Login successful!')
+                        return redirect('dashboard') 
+                    else:
+                        return redirect('login') 
+        else:
+            return render(request, "common/attack_detected.html") 
+    else:
+        form = LoginParticpantForm()
+    return render(request,"common/AttackLogin.html", {'form':form})
+
+
+def predictAttack():
+    categories =  pickle.load(open('model/categoricalValues.sav', 'rb'))
+    ddosCategoryValue =  pickle.load(open('model/ddos_Category_data.sav', 'rb'))
+    trafficCategoryValue =  pickle.load(open('model/traffic_Category_data.sav', 'rb'))
+    test_data = [
+    [0.0,'icmp', 'netbios_dgm', 'RSTO',  304.0,  8343.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0, 0.0,  0.0,  2.0,  2.0,  0.0,  0.0,  0.0,  0.0,  1.0,  0.0,  0.0,  2.0,  255.0,  1.0,  0.0,  0.5,  0.01,  0.0,  0.0,  0.0,  0.0],
+    [0,'tcp','discard','S0',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,256,2,1.00,1.00,0.00,0.00,0.01,0.05,0.00,255,2,0.01,0.05,0.00,0.00,1.00,1.00,0.00,0.00],
+    [33.0,  'tcp', 'telnet',  'SF',  2402.0,  3815.0,  0.0,  0.0,  0.0,  3.0,  0.0,  1.0,  2.0,  1.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1.0,  1.0,  0.0,  0.0,  0.0,  0.0,  1.0,  0.0,  0.0,  3.0,  3.0,  1.0,  0.0,  0.33,  0.0,  0.0,  0.0,  0.0,  0.0],
+    [49.0,  'tcp', 'telnet',  'SF',  2402.0,  3939.0,  0.0,  0.0,  0.0,  4.0,  0.0,  1.0,  2.0,  1.0,  0.0,  0.0,   0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  1.0,  1.0,  0.0,  0.0,  0.0,  0.0,  1.0,  0.0,  0.0,  1.0,  2.0,  1.0,  0.0,  1.0,  1.0,  0.0,  0.0,  0.0,  0.0]
+    ]
+    testInput = random.choice(test_data)
+    print(testInput)
+    testInput[1] = categories[0][testInput[1]]
+    testInput[2] = categories[2][testInput[2]]
+    testInput[3] = categories[1][testInput[3]]
+    testList =[testInput]
+    rf_traffic_loaded_model = pickle.load(open('model/catboost_traffic.sav', 'rb'))
+    myResult = rf_traffic_loaded_model.predict(testList)
+    result = 0
+    if(myResult[0] == 0):
+        rf_ddos_loaded_model = pickle.load(open('model/catboost_ddos.sav', 'rb'))
+        ddosResult = rf_ddos_loaded_model.predict(testList)
+        value = [i for i in ddosCategoryValue if ddosCategoryValue[i]==ddosResult[0]][0]
+        print('Based on Url Parameters the attack is detected as ddos attack')
+        print('-------------------------------------------------------------')
+        print('-------------------------------------------------------------')
+        print('--Blocking the IP Address------------------------------------')
+        print('-------------------------------------------------------------')
+        print('-------------------------------------------------------------')
+        print('-------------------------------------------------------------')
+        print('-------------------------------------------------------------')
+        result = 1
+        print("The traffic is identified as ddos category is "+value)
+    elif(myResult[0] == 4):
+        result = 0
+        print('normal- Request Processing')
+    else:
+        result = 2
+        print('block the request, malicious traffic')
+    return result
+    
+    
+

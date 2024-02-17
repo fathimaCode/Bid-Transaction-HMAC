@@ -5,6 +5,7 @@ urlpatterns = [
     path("",views.index, name="index"),
     
     path("login/",views.login, name="login"),
+    path("NetworkAttackLogin/",views.NetworkAttackLogin, name="NetworkAttackLogin"),
     path("register/",views.register, name="register"),
     path("authority_newTender/",views.authority_newTender, name="authority_newTender"),
     path("dashboard/",views.dashboard, name="dashboard"),
@@ -12,7 +13,7 @@ urlpatterns = [
     path("viewBidDetails/<int:tender_id>/",views.getBidDetails, name="viewBidDetails"),
     path("newCotation/",views.newCotation, name="newCotation"),
     path("viewTenderList/",views.viewTenderList, name="viewTenderList"),
-    path("networkAttack/",views.networkAttack, name="networkAttack"),
+    
     path("deleteTender/<int:tender_id>/",views.deleteTender, name="deleteTender"),
     path("adminGetBidInfo/<int:tender_id>/",views.adminGetBidInfo, name="adminGetBidInfo"),
     path("closeTender/<int:tender_id>/",views.closeTender, name="closeTender"),

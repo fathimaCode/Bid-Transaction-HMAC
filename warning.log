@@ -6293,3 +6293,228 @@ Forbidden (CSRF cookie not set.): /login/
 Forbidden (CSRF cookie not set.): /login/
 Forbidden (CSRF cookie not set.): /login/
 Forbidden (CSRF cookie not set.): /login/
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 216, in NetworkAttackLogin
+    predictAttack()
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 231, in predictAttack
+    categories =  pickle.load(open('../NetworkAttack/Category/categoricalValues.sav', 'rb'))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../NetworkAttack/Category/categoricalValues.sav'
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 216, in NetworkAttackLogin
+    predictAttack()
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 231, in predictAttack
+    categories =  pickle.load(open('../NetworkAttack/Category/categoricalValues.sav', 'rb'))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../NetworkAttack/Category/categoricalValues.sav'
+Not Found: /favicon.ico
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 216, in NetworkAttackLogin
+    predictAttack()
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 231, in predictAttack
+    categories =  pickle.load(open('../NetworkAttack/Category/categoricalValues.sav', 'rb'))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '../NetworkAttack/Category/categoricalValues.sav'
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 216, in NetworkAttackLogin
+    predictAttack()
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 231, in predictAttack
+    categories =  pickle.load(open('NetworkAttack/Category/categoricalValues.sav', 'rb'))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'NetworkAttack/Category/categoricalValues.sav'
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 216, in NetworkAttackLogin
+    predictAttack()
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 231, in predictAttack
+    categories =  pickle.load(open('NetworkAttack/Category/categoricalValues.sav', 'rb'))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'NetworkAttack/Category/categoricalValues.sav'
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 216, in NetworkAttackLogin
+    predictAttack()
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 231, in predictAttack
+    categories =  pickle.load(open('NetworkAttack/Category/categoricalValues.sav', 'rb'))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'NetworkAttack/Category/categoricalValues.sav'
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 216, in NetworkAttackLogin
+    predictAttack()
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 231, in predictAttack
+    categories =  pickle.load(open('categoricalValues.sav', 'rb'))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'categoricalValues.sav'
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 221, in NetworkAttackLogin
+    particpant = particpants.objects.get(email=email)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+eadmin.models.particpants.DoesNotExist: particpants matching query does not exist.
+5
+Tenders: <QuerySet [<tender: tender object (19)>, <tender: tender object (20)>]>
+5
+Tenders: <QuerySet [<tender: tender object (19)>, <tender: tender object (20)>]>
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 221, in NetworkAttackLogin
+    particpant = particpants.objects.get(email=email)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+eadmin.models.particpants.DoesNotExist: particpants matching query does not exist.
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 222, in NetworkAttackLogin
+    particpant = particpants.objects.get(email=email)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+eadmin.models.particpants.DoesNotExist: particpants matching query does not exist.
+5
+Tenders: <QuerySet [<tender: tender object (19)>, <tender: tender object (20)>]>
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 214, in NetworkAttackLogin
+    predictAttack()
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 248, in predictAttack
+    rf_traffic_loaded_model = pickle.load(open('model/catboost_traffic.sav', 'rb'))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'catboost'
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 214, in NetworkAttackLogin
+    predictAttack()
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 248, in predictAttack
+    rf_traffic_loaded_model = pickle.load(open('model/catboost_traffic.sav', 'rb'))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'catboost'
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 222, in NetworkAttackLogin
+    particpant = particpants.objects.get(email=email)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+eadmin.models.particpants.DoesNotExist: particpants matching query does not exist.
+5
+Tenders: <QuerySet [<tender: tender object (19)>, <tender: tender object (20)>]>
+Internal Server Error: /NetworkAttackLogin/
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 224, in NetworkAttackLogin
+    particpant = particpants.objects.get(email=email)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\db\models\query.py", line 649, in get
+    raise self.model.DoesNotExist(
+eadmin.models.particpants.DoesNotExist: particpants matching query does not exist.
+5
+Tenders: <QuerySet [<tender: tender object (19)>, <tender: tender object (20)>]>
+5
+Tenders: <QuerySet [<tender: tender object (19)>, <tender: tender object (20)>]>
+tender:tender object (20)
