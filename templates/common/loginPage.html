@@ -13,7 +13,7 @@
         <form method="post" class="bl-form">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="bl-button">Login</button>
+            <button type="submit" class="bl-btn cc">Login</button>
             <p>Need to create an account? <a href="{% url 'register' %}">Click here</a></p>
             </form>
             

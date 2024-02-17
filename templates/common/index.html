@@ -6,19 +6,39 @@
 <div class="container">
     <div class="carousel">
         <img src="{% static 'profile/bg3.jpg' %}" alt="" class="bg-image">
+        
+        <div class="heading">Safeguarding Tender Transactions: The Power of Blockchain Security</div>
     </div>
 </div>
 <div class="winner_container">
     <h3>View Winner</h3>
     <div class="BContainer">
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        {% for tender in winnerList %}
+        <div class="card">
+           
+            <div class="winner_container">
+                <div class="winner_img_container">
+                    <img src="{% static  tender.img  %}" alt="" >
+                </div>
+                <div class="winner_content">
+                    <h2>{{ tender.title }}(  {{ tender.tenderNo }})</h2>
+                </div>
+                
+                <div class="price">
+                    <p> Inital cotation: Rs.{{ tender.Initalcotation }}</p>
+                    <p> Selected cotation:  Rs.{{ tender.transaction }}</p>
+                </div>
+                <div class="winner-name">
+                  Winner:  {{ tender.winnerName }}
+                </div>
+            
+              
+               
+            </div>
+            
+           
+        </div>
+        {% endfor %}
     </div>
 </div>
 

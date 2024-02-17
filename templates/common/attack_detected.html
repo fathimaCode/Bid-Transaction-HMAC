@@ -1,10 +1,13 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Attack detected</h1>
-</body>
-</html>
+{% extends 'common/layout.html' %}
+{% load static %}
+{% block main %}
+
+
+<div class="attack">
+    <h1>Oops! Your website is under Network attack</h1>
+   <img src="{% static 'profile/cyberattack.jpg' %}" alt="">
+</div>
+
+
+  
+{% endblock %}

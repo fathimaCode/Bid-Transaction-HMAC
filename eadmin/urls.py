@@ -4,6 +4,7 @@ from .import views
 urlpatterns = [
     path("",views.index, name="index"),
     
+    path("attack_page/",views.attack_page, name="attack_page"),
     path("login/",views.login, name="login"),
     path("NetworkAttackLogin/",views.NetworkAttackLogin, name="NetworkAttackLogin"),
     path("register/",views.register, name="register"),

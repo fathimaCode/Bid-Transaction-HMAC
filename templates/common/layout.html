@@ -13,9 +13,13 @@
 <body>
     <header>
         <nav>
-            <!-- <img src="{% static 'profile/logo.jpg' %}" alt="" class="logo-image">
+            <div class="logo-container">
+                <img src="{% static 'profile/logo.jpg' %}" alt="" height="60px" width="80px" class="logo-image">
+                 <h1>Blockchain</h1>
+            </div>
+            <!-- 
              -->
-             <h1>Blockchain</h1>
+            
             <ul>
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li> <span><a href="{% url 'login' %}">Login</a></span></li>

@@ -15,27 +15,32 @@
     --green-color:#0c8835;
     --white-color: #ffff;
     --black-color: #0a0a0aee;
+    --red-color:#d30202;
 }
 
 header {
     background-color: var(--white-color);
-    border: 1px solid var(--primary-color);
-    height: 60px;
+    height: 70px;
     width: 100%;
     top: 0;
     position: sticky;
     z-index: 1000;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
+.logo-container{
+    display: flex;
+}
 header nav {
     display: flex;
     cursor: pointer;
     justify-content: space-between;
-    margin: 10px;
+  
 }
-
+header nav h1{
+    margin: 15px;
+}
 header nav ul {
+    margin: 15px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -71,29 +76,33 @@ li span a:hover {
 }
 
 .logo-image {
-    height: 40px;
-    width: 70px;
+
 }
 
 .carousel {
     height: 400px;
     width: 100%;
-    border: 1px solid var(--black-color);
+   object-fit: contain;
     overflow: hidden;
     position: relative;
 
 }
-
+.heading{
+    position: absolute;
+    font-size: 1.8em;
+    color: var(--white-color);
+    margin: 15px;
+    top: 50%;
+}
 .carousel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  
+   width: 100%;
     position: absolute;
 }
 
 .winner_container {
     display: flex;
-    height: 300px;
+    height: 600px;
     overflow-y: scroll;
 
     margin: 5px;
@@ -101,7 +110,10 @@ li span a:hover {
 }
 
 .winner_container h3 {
-    font-weight: 200;
+    font-weight: 500;
+    font-size: 1.5em;
+    align-self: center;
+    
     padding: 20px;
     color: var(--primary-color);
 }
@@ -109,12 +121,14 @@ li span a:hover {
 .BContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    margin: 15px 15px 0px 45px;
 }
 
 .card {
-    height: 200px;
+    height: 300px;
     margin: 10px;
-    width: 250px;
+    position: relative;
+    width: 300px;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -252,7 +266,7 @@ a {
     height: 100%;
     width: 100%;
     display: grid;
- 
+    margin: 20px;   
     grid-template-columns: 1fr 1fr 1fr;
 }
 .bl-container .bl-card{
@@ -384,3 +398,74 @@ tbody tr:hover{
     background-color: var(--light-primary-color);
     color: var(--white-color);
 }
+.initalcotation{
+    border: 1px solid beige;
+    height: 50px;
+    margin-top: 100px;
+}
+.card .winner_container{
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  
+}
+.card .winner_container .winner_img_container{
+    position: absolute;
+ object-fit: cover;
+   width: 80%;
+  align-self: center;
+  
+}
+.winner_img_container img{
+    height: 150px;
+    width: 200px;
+  
+}
+.winner_content{
+    margin-top: 160px;
+    
+}
+.winner_content h2{
+    color: var(--primary-color);
+}
+.price{
+    overflow: hidden;
+    display: flex;
+}
+.winner-name{
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+    background: var(--green-color);
+    color: var(--white-color);
+    padding: 5px;
+  }
+  .attack{
+    height: 400px;
+    width: 800px;
+    margin: 5% auto;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  .attack h1{
+    text-align: center;
+    padding: 5px;
+    color: var(--red-color);
+  }
+  .attack img{
+    position: absolute;
+    height: 330px;
+    width: 400px;
+    left: 150px;
+  }
+  .bl-btn.cc{
+color: var(--white-color);
+font-size: 20px;
+padding: 10px;
+width: 150px;
+margin-bottom: 5px;
+margin-left: 100px;
+  }

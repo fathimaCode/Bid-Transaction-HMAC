@@ -5,7 +5,7 @@ class TenderListMiddleWare:
 
     def __call__(self, request):
         tenderList = None
-        getTender = tender.objects.all()
+        getTender = tender.objects.filter(status=True)
         request.tenderList = getTender
         response = self.get_response(request)
         return response

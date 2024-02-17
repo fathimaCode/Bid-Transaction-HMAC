@@ -14,7 +14,24 @@ logger = logging.getLogger(__name__)
 
 
 def index(request):
-    return render(request,"common/index.html")
+    data=[]
+    tendersList = tender.objects.filter(status=False)
+    for tt in tendersList:
+        print(tt.title)
+        winnerid = tt.winnerid
+        blid = tt.blockid
+        participantInfo = particpants.objects.filter(id=winnerid)
+        print(participantInfo[0].username)
+        blockInfo = Blockchain.objects.filter(id=blid)
+        transaction = 0
+        for bb in blockInfo:
+            # Assuming bb.data is a dictionary
+            obj = bb.data
+            # Access the keys and values directly
+            transaction = obj['data']['transaction']
+        data.append({'title':tt.title,'tenderNo':tt.tenderNo,'img':tt.img,'Initalcotation':tt.initalCotation,'winnerName':participantInfo[0].username,'transaction':transaction}) 
+    print(data)
+    return render(request,"common/index.html",{"winnerList":data})
 
 def login(request):
     if request.method == 'POST':
@@ -276,5 +293,6 @@ def predictAttack():
         print('block the request, malicious traffic')
     return result
     
-    
+def attack_page(request):
+    return render(request,'common/attack_detected.html')
 
