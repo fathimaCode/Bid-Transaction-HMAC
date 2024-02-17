@@ -2,6 +2,9 @@
 {% load static %}
 {% block content %}
 <h1>Admin dashboard</h1>
+<div class="bid_container">
+    
+</div>
 <p><a href="{% url 'viewTenderList' %}">View Tenders</a></p>
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}

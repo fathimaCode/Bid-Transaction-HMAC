@@ -17,15 +17,21 @@
             <li>Logout</li>
         </ul>
     </header>
-    <section class="sidebar">
-        <div class="navbar">
-            <div class="menu"><i class="fa-solid fa-house"></i>Home</div>
-            <div class="menu">View Tenders</div>
-            <div class="menu">View Users</div>
-        </div>
+    <section class="admin_body">
+        <section class="sidebar">
+            <div class="navbar">
+                <div class="menu"><i class="fa-solid fa-house"></i>Home</div>
+                <div class="menu">View Tenders</div>
+                <div class="menu">View Users</div>
+            </div>
+        </section>
+        <section class="maincontent">
+            {% block content %}
+            {% endblock %}
+        </section>
     </section>
-    {% block content %}
-    {% endblock %}
+  
+   
 </div>
 </body>
 </html>
