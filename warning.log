@@ -8530,3 +8530,4 @@ Traceback (most recent call last):
   File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\template\base.py", line 698, in __init__
     raise TemplateSyntaxError(
 django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '!=""' from 'message!=""'
+Not Found: /favicon.ico

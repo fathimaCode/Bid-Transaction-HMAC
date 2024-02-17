@@ -2,11 +2,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% load static %}
+    <title>Admin-Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+
+    <link rel="icon" href="{% static 'profile/logo.jpg' %}" type="image/png">
 </head>
 <body>
-    <p>Authority dashboard</p>
+    <div class="admin-container">
+    <header class="admin-header">
+        <ul>
+            <li><h2>Welcome! Authority</h2></li>
+            <li>Logout</li>
+        </ul>
+    </header>
+    <section class="sidebar">
+        <div class="navbar">
+            <div class="menu"><i class="fa-solid fa-house"></i>Home</div>
+            <div class="menu">View Tenders</div>
+            <div class="menu">View Users</div>
+        </div>
+    </section>
     {% block content %}
     {% endblock %}
+</div>
 </body>
 </html>
