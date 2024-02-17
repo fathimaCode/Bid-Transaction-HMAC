@@ -12,10 +12,15 @@
 :root {
     --primary-color: #9766be;
     --light-primary-color: #be9fd8;
-    --green-color:#0c8835;
+    --green-color: #0c8835;
     --white-color: #ffff;
     --black-color: #0a0a0aee;
-    --red-color:#d30202;
+    --red-color: #d30202;
+    --grey-color: #b3b3b3;
+}
+
+body {
+    position: relative;
 }
 
 header {
@@ -27,18 +32,22 @@ header {
     z-index: 1000;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.logo-container{
+
+.logo-container {
     display: flex;
 }
+
 header nav {
     display: flex;
     cursor: pointer;
     justify-content: space-between;
-  
+
 }
-header nav h1{
+
+header nav h1 {
     margin: 15px;
 }
+
 header nav ul {
     margin: 15px;
     display: flex;
@@ -75,28 +84,28 @@ li span a:hover {
     color: var(--white-color);
 }
 
-.logo-image {
-
-}
+.logo-image {}
 
 .carousel {
     height: 400px;
     width: 100%;
-   object-fit: contain;
+    object-fit: contain;
     overflow: hidden;
     position: relative;
 
 }
-.heading{
+
+.heading {
     position: absolute;
     font-size: 1.8em;
     color: var(--white-color);
     margin: 15px;
     top: 50%;
 }
+
 .carousel img {
-  
-   width: 100%;
+
+    width: 100%;
     position: absolute;
 }
 
@@ -113,7 +122,7 @@ li span a:hover {
     font-weight: 500;
     font-size: 1.5em;
     align-self: center;
-    
+
     padding: 20px;
     color: var(--primary-color);
 }
@@ -247,7 +256,7 @@ a {
     color: var(--white-color);
     font-weight: 300;
     border-radius: 5px;
-    
+
 }
 
 .dropbtn {
@@ -259,17 +268,20 @@ a {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-.bl-fnt{
+
+.bl-fnt {
     font-weight: 200;
 }
-.bl-container{
+
+.bl-container {
     height: 100%;
     width: 100%;
     display: grid;
-    margin: 20px;   
+    margin: 20px;
     grid-template-columns: 1fr 1fr 1fr;
 }
-.bl-container .bl-card{
+
+.bl-container .bl-card {
     height: 250px;
     width: 350px;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
@@ -277,21 +289,24 @@ a {
     margin: 5px;
     border-radius: 5px;
 }
-.bl-img{
+
+.bl-img {
     height: 120px;
     width: 170;
     position: absolute;
     margin-left: 50px;
     border-radius: 5px;
     z-index: 1;
-    
+
 }
-.bl-content{
+
+.bl-content {
     position: absolute;
     width: 100%;
-    height:100%;
+    height: 100%;
 }
-.bl-content .bl-title{
+
+.bl-content .bl-title {
     position: absolute;
     left: 0;
     top: 25px;
@@ -301,49 +316,58 @@ a {
     width: 100px;
     height: 30px;
 }
-.bl-content h6{
+
+.bl-content h6 {
     text-align: center;
 }
+
 .header-container {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
 }
-.bl-info{
+
+.bl-info {
     position: absolute;
     display: flex;
     padding: 5px;
     margin-top: 35%;
     min-height: 48%;
     width: 100%;
-    
+
 }
-.bl-calender{
+
+.bl-calender {
     border-radius: 0 10px 0px 10px;
     padding: 4px;
-background-color: var(--primary-color);
-color: var(--white-color);
+    background-color: var(--primary-color);
+    color: var(--white-color);
     width: 65%;
 }
-.bl-calender i{
+
+.bl-calender i {
     padding: 2px;
 }
-.bl-calender span{
+
+.bl-calender span {
     font-weight: 100;
     margin: 2px;
     padding: 5px;
 }
-.bl-cotation{
+
+.bl-cotation {
     width: 30%;
     padding: 2px;
     font-weight: 100;
-    
+
 }
-.bl-cotation .header{
+
+.bl-cotation .header {
     font-size: 14px;
 }
-.bl-btn{
+
+.bl-btn {
     display: absolute;
     border: 1px solid var(--white-color);
     color: var(--black-color);
@@ -354,88 +378,111 @@ color: var(--white-color);
     border-radius: 0px 10px 0px 10px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-.bl-btn.wd-1{
+
+.bl-btn.wd-1 {
     width: 120px;
     height: 60px;
     font-size: 1em;
     color: var(--white-color);
 }
-.bl-btn:hover{
+
+.bl-btn:hover {
     background-color: var(--green-color);
 }
-.card.cotation-card{
+
+.card.cotation-card {
     height: 250px;
     width: 500px;
+    position: relative;
 }
-.cotation-card p, form{
+
+.cotation-card p,
+form {
     padding: 10px;
 }
-.card.cotation-card.wd{
+
+.card.cotation-card.wd {
     height: 80%;
-    width: 800px;
+    width: 1000px;
     overflow: scroll;
 }
-.wd h2{
+
+.wd h2 {
     padding: 10px;
 }
-table{
+
+table {
     margin: 10px;
-    border: 1px solid var(--light-primary-color)
+    position: absolute;
+    border: 1px solid var(--black-color);
 }
-table thead{
-    background-color: var(--light-primary-color);
-    color: var(--white-color);
+
+table thead {
+    background-color: var(--grey-color);
+    color: var(--black-color);
 }
-table thead th{
+
+table thead th {
     padding: 15px;
 }
-tbody tr td{
-    border: 1px solid var(--light-primary-color);
+
+tbody tr td {
+    border: 1px solid var(--black-color);
     padding: 10px;
     text-align: center;
 
 }
-tbody tr:hover{
+
+tbody tr:hover {
     background-color: var(--light-primary-color);
+    border: 1px solid var(--black-color);
     color: var(--white-color);
 }
-.initalcotation{
+
+.initalcotation {
     border: 1px solid beige;
     height: 50px;
     margin-top: 100px;
 }
-.card .winner_container{
+
+.card .winner_container {
     position: absolute;
     top: 0;
     overflow: hidden;
     width: 100%;
     height: 100%;
-  
+
 }
-.card .winner_container .winner_img_container{
+
+.card .winner_container .winner_img_container {
     position: absolute;
- object-fit: cover;
-   width: 80%;
-  align-self: center;
-  
+    object-fit: cover;
+    width: 80%;
+    align-self: center;
+
 }
-.winner_img_container img{
+
+.winner_img_container img {
     height: 150px;
     width: 200px;
-  
+
 }
-.winner_content{
+
+.winner_content {
     margin-top: 160px;
-    
+
 }
-.winner_content h2{
+
+.winner_content h2 {
     color: var(--primary-color);
 }
-.price{
+
+.price {
     overflow: hidden;
     display: flex;
 }
-.winner-name{
+
+.winner-name {
     position: absolute;
     bottom: 20px;
     left: 50px;
@@ -443,33 +490,87 @@ tbody tr:hover{
     background: var(--green-color);
     color: var(--white-color);
     padding: 5px;
-  }
-  .attack{
+}
+
+.attack {
     height: 400px;
     width: 800px;
     margin: 5% auto;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  }
-  .attack h1{
+}
+
+.attack h1 {
     text-align: center;
     padding: 5px;
     color: var(--red-color);
-  }
-  .attack img{
+}
+
+.attack img {
     position: absolute;
     height: 330px;
     width: 400px;
     left: 150px;
-  }
-  .bl-btn.cc{
-color: var(--white-color);
-font-size: 20px;
-padding: 10px;
-width: 150px;
-margin-bottom: 5px;
-margin-left: 100px;
-  }
-  .unavailable{
-    color:var(--red-color)
-  }
+}
+
+.bl-btn.cc {
+    color: var(--white-color);
+    font-size: 20px;
+    padding: 10px;
+    width: 150px;
+    margin-bottom: 5px;
+    margin-left: 100px;
+}
+
+.unavailable {
+    color: var(--red-color)
+}
+
+.message_container {
+    position: absolute;
+    height: 80px;
+    width: 350px;
+    border-radius: 25px 0px 25px 0px;
+    top: 30px;
+
+    right: 15px;
+    z-index: 1000;
+    padding: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: var(--green-color);
+    color: var(--white-color);
+
+
+}
+
+.message_container span {
+    margin: 2px;
+}
+
+.close {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    margin: 2px;
+    font-size: 20px;
+    right: 3px;
+    top: 5px;
+
+    color: white;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: var(--red-color);
+    transform: translateX(5px);
+    animation: returnToOriginal 3s forwards;
+    
+}
+@keyframes returnToOriginal {
+0%{
+    transform: translateX(5px);
+}100%{
+    transform: translateX(0px);
+}
+}

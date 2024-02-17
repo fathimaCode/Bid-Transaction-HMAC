@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import particpantForm,LoginParticpantForm,particpants,tender,Blockchain,tenderCotated,TenderForm
 from datetime import datetime
+from django.http import HttpResponseRedirect
 
 from django.contrib import messages
 from .HmacEncoderDecoder import HmacEncoderDecoder
@@ -56,11 +57,15 @@ def login(request):
     return render(request,"common/loginPage.html", {'form':form})
 
 def register(request):
+    message = ''
     if request.method == 'POST':
         form = particpantForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.success(request, "Your account has been created successfully!")
             return redirect('login')
+        else:
+            messages.error(request,"Invalid form submission")
     else:
         form = particpantForm()
     return render(request,"common/registerPage.html",{'form':form})
@@ -97,10 +102,21 @@ def getBidDetails(request,tender_id):
     bl_block = isTenderCotatedByUser(tender_id)
    # block_list = getattr(request, 'block_list', None)
     participant_info = getattr(request, 'participant_info', None)
-    return render(request,'e-participant/tenderDetails.html',{'tenderDetails':tenders,'block_list': bl_block, 'participant_info': participant_info})
+    print(participant_info.id)
+    currentUserid = 0
+    isCotated = False
+    for bbl in bl_block:
+        if int(bbl['userid']) == participant_info.id:
+            print("already cotated")
+            isCotated = True
+        else:
+            print("not quoted")
+
+    return render(request,'e-participant/tenderDetails.html',{'tenderDetails':tenders,'block_list': bl_block, 'participant_info': participant_info,"isCotated":isCotated})
 
 
 def newCotation(request):
+    message = "" 
     if request.method=='POST':
         cotedAmount = request.POST.get('amount')
         userId = request.POST.get('userid')
@@ -122,7 +138,7 @@ def newCotation(request):
         else:
             createBlockchain(tenderNo,previousHash,encoded_data['digest'],encoded_data)
             tenderCote_create(tenderNo,userId)
-            message = "created successfully"
+            message = "Bid successfully"
     return render(request, "e-participant/index.html", {'participant_info': participant_info,'tenders':tenders,'message':message})
 
 def createBlockchain(tenderNo,previousHash,encoded,data ):

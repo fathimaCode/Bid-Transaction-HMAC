@@ -2,6 +2,19 @@
 {% load static %}
 {% block main %}
 
+    {% if messages %}
+    <div class="message_container" id="close_button">
+        
+        {% for message in messages %}
+        {% if message.tags == 'success' %}
+        <span>{{ message }}</span>
+        {% endif %}
+        {% endfor %}
+    
+</div>
+{% endif %}
+
+
 
 <section>
     <div class="card form">

@@ -1,8 +1,12 @@
 {% extends 'e-participant/layout.html' %}
 
 {% block content %}
- 
+<div class="message">
+    {{ message }}
+</div>
     <div class="bl-container">
+     
+        {% if not isCotated%}
          <div class="card cotation-card ">
             <p>Tender No: {{ tenderDetails.tenderNo }}</p>
             <p>Initial Cotation: Rs. {{ tenderDetails.initalCotation }}</p>
@@ -16,6 +20,7 @@
             </form>
         
         </div>
+        {%endif %}
         <div class="card cotation-card wd ">
             <h2>Recent Participant Cotation </h2>
             <table>
