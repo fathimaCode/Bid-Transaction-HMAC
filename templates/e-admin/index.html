@@ -1,15 +1,72 @@
 {% extends 'e-admin/layout.html' %}
 {% load static %}
 {% block content %}
-<h1>Admin dashboard</h1>
+
 <div class="bid_container">
-    
+    <h1>Admin dashboard</h1>
+    <p class="breadcrump">Dashboard/Add Tender</p>
+    <section class="mainTender">
+        <h1>New Tender</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="tcontainer">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="{{ form.title.id_for_label }}">Title:</label>
+                        <div class="tender-input">
+                            {{ form.title }}
+                        </div> 
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.started_at.id_for_label }}">Started At:</label>
+                        <div class="tender-input">
+                            {{ form.started_at }}
+                        </div> 
+                       
+                    </div>
+                    <div class="form-group">
+                        <label for="{{ form.ended_at.id_for_label }}">Ended At:</label>
+                        <div class="tender-input">
+                            {{ form.ended_at }}
+
+                        </div> 
+                    </div>
+                </div>
+                <div class="col-6">
+                <div class="form-group">
+                    <label for="{{ form.tenderNo.id_for_label }}">Tender Number:</label>
+                    <div class="tender-input">
+                        {{ form.tenderNo }}
+
+                    </div> 
+                  
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.img.id_for_label }}">Image:</label>
+                    <div class="tender-input">
+                        {{ form.tenderNo }}
+
+                    </div> 
+                    {{ form.img }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.initalCotation.id_for_label }}">Initial Quotation:</label>
+                    <div class="tender-input">
+                        {{ form.initalCotation }}
+
+                    </div> 
+                    
+                </div>
+            </div>
+
+            </div>
+            
+            
+            <button type="submit">Submit</button>
+            </form>
+    </section>
 </div>
+
 <p><a href="{% url 'viewTenderList' %}">View Tenders</a></p>
-<form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="bl-button">Add</button>
-   
-    </form>
+
 {% endblock%}
