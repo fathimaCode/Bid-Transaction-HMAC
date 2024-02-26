@@ -22,7 +22,9 @@
                         <img src="{% static 'profile/default.jpg' %}" alt="" height="30px" width="30px">
                     </div>
                     <div class="dropdown-content">
-                        <a href="{% url 'index' %}">Profile</a>
+                        {% if participant_info %}
+                        <a href="{% url 'myInfo' userid=participant_info.id  %}">Profile</a>
+                        {% endif%}
                         <a href="{% url 'index' %}">Logout</a>
                     </div>
                 </li>
@@ -35,9 +37,7 @@
     </header>
     
 
-    <a href="{% url 'dashboard' %}">Home</a>
-    <a href="{% url 'bid_details' %}">Bid Details</a>
-    <a href="{% url 'index' %}">Logout</a>
+   
 
     {% block content %}
     {% endblock  %}

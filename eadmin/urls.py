@@ -18,5 +18,6 @@ urlpatterns = [
     path("deleteTender/<int:tender_id>/",views.deleteTender, name="deleteTender"),
     path("adminGetBidInfo/<int:tender_id>/",views.adminGetBidInfo, name="adminGetBidInfo"),
     path("closeTender/<int:tender_id>/",views.closeTender, name="closeTender"),
+    path("myInfo/<int:userid>/",views.myInfo, name="myInfo"),
     path("announceWinner/<int:blockid>/",views.announceWinner, name="announceWinner"),
 ]

@@ -208,6 +208,17 @@ def viewUsers(request):
     users = getattr(request, 'userList', None)
     return render(request,"e-admin/UserList.html",{"userList":users})
 
+def myInfo(request,userid):
+    print("line 212 :",userid)
+    user = particpants.objects.get(pk=userid)
+    print(user.username)
+    if request.method == 'POST' and request.FILES.get('profile_image'):
+        profile_image = request.FILES['profile_image']
+        # Assuming you have a field named 'profile_image' in your participants model
+        user.profile_picture = profile_image
+        user.save()
+    return render(request,"e-participant/Profile.html",{"userInfo":user})
+
 def deleteTender(request,tender_id):
     tenders=tender.objects.get(pk=tender_id)
     logger.warning(f"tender:{tenders}")

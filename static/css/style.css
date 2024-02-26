@@ -668,3 +668,34 @@ display: flex;
     padding: 20px;
     font-weight: bold;
 }
+.info-tender{
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 30px 60px 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 20px;
+}
+.profile-image{
+    position: relative;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.default{
+    position: absolute
+}
+.img_profile{
+    position: absolute;
+}
+.profile-details{
+    padding: 20px ;
+    color: var(--black-color);
+}
+.uploadImage{
+    position: absolute;
+    display: flex;
+    margin-top: 270px;
+}
