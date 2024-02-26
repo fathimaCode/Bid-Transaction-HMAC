@@ -9795,3 +9795,11 @@ Traceback (most recent call last):
   File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\template\smartif.py", line 149, in nud
     raise parser.error_class("Unexpected end of expression in if tag.")
 django.template.exceptions.TemplateSyntaxError: Unexpected end of expression in if tag.
+5
+Tenders: <QuerySet [<tender: tender object (25)>]>
+5
+Tenders: <QuerySet [<tender: tender object (25)>]>
+5
+Tenders: <QuerySet [<tender: tender object (25)>]>
+5
+Tenders: <QuerySet [<tender: tender object (25)>]>
