@@ -36,9 +36,9 @@
                     <td>{{tender.ended_at}}</td>
                     <td>{{tender.initalCotation}}</td>
                     <td>{{tender.status}}</td>
-                    <td>  <a href="{% url 'adminGetBidInfo' tender_id=tender.id %}" >View</a></td>
-                    <td>  <a href="{% url 'deleteTender' tender_id=tender.id %}" >Delete</a></td>
-                    <td>  <a href="{% url 'closeTender' tender_id=tender.id %}" >Close Tender</a></td>
+                    <td>  <a href="{% url 'adminGetBidInfo' tender_id=tender.id %}" >View</a> || <a href="{% url 'deleteTender' tender_id=tender.id %}" >Delete</a></td>
+                
+                 <!--    <td>  <a href="{% url 'closeTender' tender_id=tender.id %}" >Close Tender</a></td> -->
                 </tr>
                 {% endfor %}
             </tbody>

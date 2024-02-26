@@ -8876,3 +8876,19 @@ Traceback (most recent call last):
     return qs._result_cache[0]
            ~~~~~~~~~~~~~~~~^^^
 IndexError: list index out of range
+Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\2024\Blockchain\blockchain\eadmin\views.py", line 34, in index
+    data.append({'title':tt.title,'tenderNo':tt.tenderNo,'img':tt.img,'Initalcotation':tt.initalCotation,'winnerName':participantInfo[0].username,'transaction':transaction})
+                                                                                                                     ~~~~~~~~~~~~~~~^^^
+  File "C:\Users\ISI-Android\anaconda3\Lib\site-packages\django\db\models\query.py", line 452, in __getitem__
+    return qs._result_cache[0]
+           ~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+Not Found: /favicon.ico
