@@ -1,3 +1,4 @@
+This Project is designed in django Framework with SQLite as Backend. The project check the network attack using KCup99.csv dataset. The HMAC based blockchain is implemented to secure the bidding transaction information. 
 Home Page:
 ![1](https://github.com/fathimaCode/Bid-Transaction-HMAC/assets/142009811/f9d3ebc9-c9c2-4d51-9d43-3a4ca4810ed9)
 Wiiner Page:
