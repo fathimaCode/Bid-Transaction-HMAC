@@ -51,7 +51,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     'eadmin.middlewares.ParticipantInfoMiddleware',
     'eadmin.tenderMiddleware.TenderListMiddleWare',
-    'eadmin.BlockchainMiddleWare.BlockchainMiddleWare'
+    'eadmin.BlockchainMiddleWare.BlockchainMiddleWare',
+    'eadmin.userMiddleWare.userMiddleWare'
 ]
 
 ROOT_URLCONF = "blockchain.urls"

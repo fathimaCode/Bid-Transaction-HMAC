@@ -1,36 +1,44 @@
 {% extends 'e-admin/layout.html' %}
 {% load static %}
 {% block content %}
-<h1>Admin dashboard</h1>
-<p><a href="{% url 'authority_newTender' %}">Home</a></p>
-<p><a href="{% url 'viewTenderList' %}">View Tenders</a></p>
+<div class="bid_container">
 
-<table>
-    <thead>
-        <th>S.No</th>
-        <th>block_id</th>
-        <th>UserId</th>
-        <th>Previous Hash</th>
-        <th>Coted Amount</th>
-        <th>Cotated At</th>
-    </thead>
-    <tbody>
-        {% for blocks in block_list %}
-        
-        <tr>
-            <td>{{forloop.counter}}</td>
-            <td>{{blocks.bbid}}</td>
-           
-            <td>{{blocks.userid}}</td>
-            <td>{{blocks.previousHash}}</td>
-            <td>{{blocks.transaction}}</td>
-            <td>{{blocks.updated_at}}</td>
-            
-            <td>  <a href="{% url 'announceWinner' blockid=blocks.bbid %}" >Announce as Winner</a></td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+    <h1>Admin dashboard</h1>
+    <p class="breadcrump">Dashboard/View Tender Information</p>
+    <section class="mainTender">
+
+        <table>
+            <thead>
+                <th>S.No</th>
+                <th>block_id</th>
+                <th>UserId</th>
+                <th>Previous Hash</th>
+                <th>Coted Amount</th>
+                <th>Cotated At</th>
+            </thead>
+            <tbody>
+                {% for blocks in block_list %}
+                
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{blocks.bbid}}</td>
+                   
+                    <td>{{blocks.userid}}</td>
+                    <td>{{blocks.previousHash}}</td>
+                    <td>{{blocks.transaction}}</td>
+                    <td>{{blocks.updated_at}}</td>
+                    
+                    <td>  <a href="{% url 'announceWinner' blockid=blocks.bbid %}" >Announce as Winner</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </section></div>
+
+
+
+
 
 
 {% endblock%}

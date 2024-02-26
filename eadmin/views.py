@@ -23,7 +23,7 @@ def index(request):
         winnerid = tt.winnerid
         blid = tt.blockid
         participantInfo = particpants.objects.filter(id=winnerid)
-        print(participantInfo[0].username)
+       
         blockInfo = Blockchain.objects.filter(id=blid)
         transaction = 0
         for bb in blockInfo:
@@ -42,7 +42,7 @@ def login(request):
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
             if email=="authority@blockchain.com" and password=="authority":
-                return redirect('authority_newTender')
+                return redirect('viewTenderList')
             else:
                 particpant = particpants.objects.get(email=email)
                 if particpant.password==password:
@@ -203,6 +203,10 @@ def authority_newTender(request):
 def viewTenderList(request):
     tenders = getattr(request, 'tenderList', None)
     return render(request,"e-admin/viewTenderList.html",{"tenderlist":tenders})
+
+def viewUsers(request):
+    users = getattr(request, 'userList', None)
+    return render(request,"e-admin/UserList.html",{"userList":users})
 
 def deleteTender(request,tender_id):
     tenders=tender.objects.get(pk=tender_id)

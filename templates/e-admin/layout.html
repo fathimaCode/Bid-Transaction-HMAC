@@ -14,15 +14,15 @@
     <header class="admin-header">
         <ul>
             <li><h2>Welcome! Authority</h2></li>
-            <li>Logout</li>
+            <li>  <a href="{% url 'index' %}">Logout</a></li>
         </ul>
     </header>
     <section class="admin_body">
         <section class="sidebar">
             <div class="navbar">
-                <div class="menu"><i class="fa-solid fa-house"></i>Home</div>
-                <div class="menu">View Tenders</div>
-                <div class="menu">View Users</div>
+            
+                <div class="menu"> <a href="{% url 'viewTenderList' %}"> View Tenders</a> </div>
+                <div class="menu"> <a href="{% url 'viewUsers' %}">View Users</a></div>
             </div>
         </section>
         <section class="maincontent">

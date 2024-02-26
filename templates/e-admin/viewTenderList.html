@@ -1,40 +1,51 @@
 {% extends 'e-admin/layout.html' %}
 {% load static %}
 {% block content %}
-<h1>Admin dashboard</h1>
-<p><a href="{% url 'authority_newTender' %}">Home</a></p>
-<p><a href="{% url 'viewTenderList' %}">View Tenders</a></p>
 
-<table>
-    <thead>
-        <th>S.No</th>
-        <th>Img</th>
-        <th>tenderNo</th>
-        <th>title</th>
-        <th>started_at</th>
-        <th>ended_at</th>
-        <th>Cotated At</th>
-        <th>status</th>
-    </thead>
-    <tbody>
-        {% for tender in tenderlist %}
+<div class="bid_container">
+
+    <h1>Admin dashboard</h1>
+    <p class="breadcrump">Dashboard/View Tender</p>
+    <section class="mainTender">
+        <div class="tenderCC">
+            <h1>Tenders</h1>
+            <a href="{% url 'authority_newTender' %}">Add</a>
+        </div>
         
-        <tr>
-            <td>{{forloop.counter}}</td>
-            <td><img src="{% static  tender.img  %}" alt="" height="50px" width="50px"></td>
-            <td>{{tender.tenderNo}}</td>
-            <td>{{tender.title}}</td>
-            <td>{{tender.started_at}}</td>
-            <td>{{tender.ended_at}}</td>
-            <td>{{tender.initalCotation}}</td>
-            <td>{{tender.status}}</td>
-            <td>  <a href="{% url 'adminGetBidInfo' tender_id=tender.id %}" >View</a></td>
-            <td>  <a href="{% url 'deleteTender' tender_id=tender.id %}" >Delete</a></td>
-            <td>  <a href="{% url 'closeTender' tender_id=tender.id %}" >Close Tender</a></td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+        <table>
+            <thead>
+                <th>S.No</th>
+                <th>Img</th>
+                <th>tenderNo</th>
+                <th>title</th>
+                <th>started_at</th>
+                <th>ended_at</th>
+                <th>Cotated At</th>
+                <th>status</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                {% for tender in tenderlist %}
+                
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td><img src="{% static  tender.img  %}" alt="" height="50px" width="50px"></td>
+                    <td>{{tender.tenderNo}}</td>
+                    <td>{{tender.title}}</td>
+                    <td>{{tender.started_at}}</td>
+                    <td>{{tender.ended_at}}</td>
+                    <td>{{tender.initalCotation}}</td>
+                    <td>{{tender.status}}</td>
+                    <td>  <a href="{% url 'adminGetBidInfo' tender_id=tender.id %}" >View</a></td>
+                    <td>  <a href="{% url 'deleteTender' tender_id=tender.id %}" >Delete</a></td>
+                    <td>  <a href="{% url 'closeTender' tender_id=tender.id %}" >Close Tender</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</div>
+
 
 
 

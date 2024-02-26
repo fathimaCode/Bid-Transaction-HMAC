@@ -1,0 +1,44 @@
+{% extends 'e-admin/layout.html' %}
+{% load static %}
+{% block content %}
+
+<div class="bid_container">
+
+    <h1>Admin dashboard</h1>
+    <p class="breadcrump">Dashboard/UserList</p>
+    <section class="mainTender">
+        <div class="tenderCC">
+            <h1>View Users</h1>
+        </div>
+        
+        <table>
+            <thead>
+                <th>S.No</th>
+                <th>Img</th>
+                <th>Nam</th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Created_At</th>
+            </thead>
+            <tbody>
+                {% for user in userList %}
+                
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td><img src="{% static  user.profile_picture  %}" alt="" height="50px" width="50px"></td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.contact}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.created_at}}</td>
+                 
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</div>
+
+
+
+
+{% endblock%}
